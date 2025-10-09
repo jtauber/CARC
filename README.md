@@ -11,8 +11,8 @@ The acronym is a Tolkien reference, "Carc" being a legendary raven from the past
 
 ## Initial Scope
 
-- 6502 machine code
+- 6502 and Z80 machine code
 
 ## First Steps
 
-- build a corpus of 6502 machine code with useful metadata
+- build a corpus of 6502 and Z80 machine code with useful metadata
