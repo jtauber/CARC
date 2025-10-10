@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, Any
 from ryland import Ryland
 from ryland.helpers import get_context
-from ryland.tubes import load, markdown, project, excerpt
+from ryland.tubes import load, markdown, project, excerpt, debug
 
 
 
@@ -91,7 +91,7 @@ posts = sorted(
         )
         for post_file in POSTS_DIR.glob("*.md")
     ],
-    key=lambda post: post["url"],
+    key=lambda post: post["source_path"],
     reverse=True,
 )
 
