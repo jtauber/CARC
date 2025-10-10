@@ -1,0 +1,5 @@
+title: "CARC"
+description: "Corpus Analysis of Retro Code"
+feed_url: "/atom.xml"
+author: "James Tauber"
+host: "https://jtauber.github.io"  # without url-root

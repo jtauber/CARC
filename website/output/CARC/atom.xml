@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
+  <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
+  <updated>2025-10-10T18:35:48.004980-04:00</updated>
+  <id>https://jtauber.github.io/CARC/atom.xml</id>
+  <title type="html">CARC</title>
+  
+    <subtitle>Corpus Analysis of Retro Code</subtitle>
+  
+  <author>
+    <name>James Tauber</name>
+  </author><entry>
+    <title type="html">Kicking off the Project</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/" rel="alternate" type="text/html" title="Kicking off the Project"/>
+    <published>2025-10-09</published>
+    <updated>2025-10-10T18:35:48.004980-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/">&lt;p&gt;Okay, I&#39;ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you&#39;re interested, star / watch the repo. I&#39;ll start some discussions there too.&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">Okay, I&#39;ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you&#39;re interested, star / watch the repo. I&#39;ll start some discussions there too.</summary>
+  </entry></feed>

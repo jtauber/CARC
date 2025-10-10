@@ -1,0 +1,33 @@
+<hgroup>
+  <h1><a href="{{ calc_url('/') }}">{{ site.title }}</a></h1>
+  {% if site.description %}
+    <div class="site-description">{{ site.description }}</div>
+  {% endif %}
+</hgroup>
+
+{#
+<nav>
+  <a href="{{ calc_url('/page1/') }}">Page 1</a>&nbsp;&bull;
+  <a href="{{ calc_url('/page2/') }}">Page 2</a>&nbsp;&bull;
+  <a href="{{ calc_url('/page3/') }}">Page 3</a>
+</nav>
+#}
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in The Hobbit.
+</p>
+
+{% include "_atom_feed_link.html" %}
