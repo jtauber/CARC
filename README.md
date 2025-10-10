@@ -16,3 +16,5 @@ The acronym is a Tolkien reference, "Carc" being a legendary raven from the past
 ## First Steps
 
 - build a corpus of 6502 and Z80 machine code with useful metadata
+  - download Apple II disk images
+
