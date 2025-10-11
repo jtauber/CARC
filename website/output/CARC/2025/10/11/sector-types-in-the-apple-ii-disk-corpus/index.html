@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sector Types in the Apple II Disk Corpus | CARC</title>
+    
+  <meta name="description" content="A regular Apple II floppy disk has 560 sectors of 256 bytes. Across the 12,450 disks in the current corpus, that’s 6,972,000 sectors. How many unique sector ...">
+
+    <link rel="stylesheet" href="/CARC/style.css?4d07f5f1578436759f72f04c4f1ddcb3">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body>
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in The Hobbit.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <article class="post">
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/">Byte Value Rank Differences For A Specific Disk</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+
+    <h1>Sector Types in the Apple II Disk Corpus</h1>
+    <div class="post-metadata">
+  <span class="post-date">October 11, 2025</span>
+  
+    <span class="post-author">by James Tauber</span>
+  
+</div>
+
+    <div class="post-content">
+      <p>A regular Apple II floppy disk has 560 sectors of 256 bytes.
+Across the 12,450 disks in the current corpus, that’s <strong>6,972,000</strong> sectors.
+How many unique sector <strong>types</strong> are there and what are the most common?</p>
+<p>There are <strong>2,780,066</strong> sector types and, unsurprisingly, by far the most common
+is a sector of all zeros which occurs <strong>1,647,906</strong> times across <strong>12,319</strong> (<strong>98.95</strong>%) disks.</p>
+<p>Below is a listing of the top 20 sector types and how many disks they appear on.
+There is a lot more that could (and will) be done here, including clustering disks based on
+a distance metric of how many sector types they have in common.
+But for now there are few things that stand out.</p>
+<p>It is interesting that the second and third most common sector types are on so few disks.
+It will be worth investigating what those disks are. The all-<code>FF</code> type is also on surprisingly few disks.</p>
+<p>It is also interesting that the next eight (as well as two more in the top 20) are of the form:<br />
+<code>00 11 XX 00 00 00 00 00...</code><br />
+I think I know the reason—more on that soon!</p>
+<p>Finally, I’ll point out that most of the remaining top-20 are potentially code and I’ll attempt to disassemble them
+in a later post.</p>
+<pre class="codehilite"><code> sectors  disks  first 16 bytes
+--------------------------------------------------------------------
+ 1647906  12319  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+   14665    110  FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 ...
+   12379    197  20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 ...
+    6859   6794  00 11 02 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6837   6792  00 11 01 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6800   6734  00 11 03 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6727   6655  00 11 04 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6591   6523  00 11 05 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6452   6383  00 11 06 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6294   6200  00 11 07 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6026   5957  00 11 08 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    5983   5880  A2 00 A0 02 88 B1 3E 4A 3E 00 BC 4A 3E 00 BC 99 ...
+    5718   5608  A2 02 8E 52 AA CD B2 AA D0 19 CA 8E 52 AA CA 8E ...
+    5675   5555  0A C8 C0 1E D0 F3 AE 9C B3 18 60 20 30 B2 90 DB ...
+    5643    702  FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF ...
+    5624   5558  00 11 09 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    5227   5218  FF 00 00 FF FF 00 00 FF FF 00 00 FF FF 00 00 FF ...
+    5221   5144  AD 00 02 CD B2 AA F0 03 4C A4 9F AD 01 02 C9 8D ...
+    5171   5141  91 40 8A C8 91 40 AA CA 68 48 C8 91 40 C8 8A 91 ...
+    4967   4901  00 11 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+</code></pre>
+    </div>
+
+    
+
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/">Byte Value Rank Differences For A Specific Disk</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+  </article>
+
+    </main>
+  </body>
+</html>

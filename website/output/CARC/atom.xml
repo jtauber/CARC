@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-11T04:11:59.589427-04:00</updated>
+  <updated>2025-10-11T14:12:51.884698-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,57 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Sector Types in the Apple II Disk Corpus</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Sector Types in the Apple II Disk Corpus"/>
+    <published>2025-10-11</published>
+    <updated>2025-10-11T14:12:51.884698-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/">&lt;p&gt;A regular Apple II floppy disk has 560 sectors of 256 bytes.
+Across the 12,450 disks in the current corpus, that’s &lt;strong&gt;6,972,000&lt;/strong&gt; sectors.
+How many unique sector &lt;strong&gt;types&lt;/strong&gt; are there and what are the most common?&lt;/p&gt;
+&lt;p&gt;There are &lt;strong&gt;2,780,066&lt;/strong&gt; sector types and, unsurprisingly, by far the most common
+is a sector of all zeros which occurs &lt;strong&gt;1,647,906&lt;/strong&gt; times across &lt;strong&gt;12,319&lt;/strong&gt; (&lt;strong&gt;98.95&lt;/strong&gt;%) disks.&lt;/p&gt;
+&lt;p&gt;Below is a listing of the top 20 sector types and how many disks they appear on.
+There is a lot more that could (and will) be done here, including clustering disks based on
+a distance metric of how many sector types they have in common.
+But for now there are few things that stand out.&lt;/p&gt;
+&lt;p&gt;It is interesting that the second and third most common sector types are on so few disks.
+It will be worth investigating what those disks are. The all-&lt;code&gt;FF&lt;/code&gt; type is also on surprisingly few disks.&lt;/p&gt;
+&lt;p&gt;It is also interesting that the next eight (as well as two more in the top 20) are of the form:&lt;br /&gt;
+&lt;code&gt;00 11 XX 00 00 00 00 00...&lt;/code&gt;&lt;br /&gt;
+I think I know the reason—more on that soon!&lt;/p&gt;
+&lt;p&gt;Finally, I’ll point out that most of the remaining top-20 are potentially code and I’ll attempt to disassemble them
+in a later post.&lt;/p&gt;
+&lt;pre class=&#34;codehilite&#34;&gt;&lt;code&gt; sectors  disks  first 16 bytes
+--------------------------------------------------------------------
+ 1647906  12319  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+   14665    110  FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 FC 03 ...
+   12379    197  20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 ...
+    6859   6794  00 11 02 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6837   6792  00 11 01 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6800   6734  00 11 03 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6727   6655  00 11 04 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6591   6523  00 11 05 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6452   6383  00 11 06 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6294   6200  00 11 07 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    6026   5957  00 11 08 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    5983   5880  A2 00 A0 02 88 B1 3E 4A 3E 00 BC 4A 3E 00 BC 99 ...
+    5718   5608  A2 02 8E 52 AA CD B2 AA D0 19 CA 8E 52 AA CA 8E ...
+    5675   5555  0A C8 C0 1E D0 F3 AE 9C B3 18 60 20 30 B2 90 DB ...
+    5643    702  FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF ...
+    5624   5558  00 11 09 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+    5227   5218  FF 00 00 FF FF 00 00 FF FF 00 00 FF FF 00 00 FF ...
+    5221   5144  AD 00 02 CD B2 AA F0 03 4C A4 9F AD 01 02 C9 8D ...
+    5171   5141  91 40 8A C8 91 40 AA CA 68 48 C8 91 40 C8 8A 91 ...
+    4967   4901  00 11 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+&lt;/code&gt;&lt;/pre&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">A regular Apple II floppy disk has 560 sectors of 256 bytes.
+Across the 12,450 disks in the current corpus, that’s &lt;strong&gt;6,972,000&lt;/strong&gt; sectors.
+How many unique sector &lt;strong&gt;types&lt;/strong&gt; are there and what are the most common?</summary>
+  </entry><entry>
     <title type="html">Byte Value Rank Differences For A Specific Disk</title>
     <link href="https://jtauber.github.io/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/" rel="alternate" type="text/html" title="Byte Value Rank Differences For A Specific Disk"/>
     <published>2025-10-10</published>
