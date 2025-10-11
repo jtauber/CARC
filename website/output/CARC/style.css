@@ -133,6 +133,9 @@ code, pre {
   font-style: normal;
   color: var(--dimmed-color);
 }
+code {
+  padding: 0.1rem 0.3rem;
+}
 pre {
   font-size: 12pt;
   background: hsl(60, 100%, 5%);

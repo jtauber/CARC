@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why So Many Sectors Start with 00 11 0X 00 | CARC</title>
+    
+  <meta name="description" content="As we saw in the previous post, ten out of the top 20 sector types start with 00 11 0X 00 and continue with all zeros. I suspected why this might be the case and I’ve now confirmed the reason.">
+
+    <link rel="stylesheet" href="/CARC/style.css?3964d98c1eb011b85974ab6bf763c967">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body>
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in The Hobbit.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <article class="post">
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/">Sector Types in the Apple II Disk Corpus</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+
+    <h1>Why So Many Sectors Start with 00 11 0X 00</h1>
+    <div class="post-metadata">
+  <span class="post-date">October 11, 2025</span>
+  
+    <span class="post-author">by James Tauber</span>
+  
+</div>
+
+    <div class="post-content">
+      <p>As we saw in the previous post, ten out of the top 20 sector types start with <code>00 11 0X 00</code> and continue with all zeros.
+I suspected why this might be the case and I’ve now confirmed the reason.</p>
+<p>Note there are even <em>more</em> sector types that <em>start</em> with the sequence <code>00 11 0X 00</code> if you don’t require the rest of the sector to be zeros.</p>
+<p>I immediately recognized the significance of <code>11</code> (decimal 17) as the track number of the catalog (i.e. directory) on Apple DOS disks and suspected the byte that followed was a sector number (it's always of the form <code>0X</code>).</p>
+<p>Turns out almost all instances of this pattern were on other sectors on track <code>11</code>. Sector <code>0F</code> would have <code>00 11 0E 00</code>, sector <code>0E</code> would have <code>00 11 0D 00</code> and so on. This is how the disk catalog is laid out in Apple DOS 3.3, with each catalog sector pointing to the next catalog sector (usually the sector before on track <code>11</code>).</p>
+<p>The all-zeros cases are just when that catalog sector is not needed (because there aren’t enough files). This explains why lower sector numbers came up more in the previous post (because lower catalog sectors are more likely to be empty than higher ones).</p>
+<p>Just over half the disks in the Apple II Disk corpus seem to follow this standard DOS 3.3 catalog layout which will be crucial in working at the file rather than disk level in future explorations.</p>
+    </div>
+
+    
+
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/">Sector Types in the Apple II Disk Corpus</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+  </article>
+
+    </main>
+  </body>
+</html>

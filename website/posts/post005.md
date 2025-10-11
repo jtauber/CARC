@@ -13,7 +13,7 @@ is a sector of all zeros which occurs **1,647,906** times across **12,319** (**9
 Below is a listing of the top 20 sector types and how many disks they appear on.
 There is a lot more that could (and will) be done here, including clustering disks based on
 a distance metric of how many sector types they have in common.
-But for now there are few things that stand out.
+But for now there are a few things that stand out.
 
 It is interesting that the second and third most common sector types are on so few disks.
 It will be worth investigating what those disks are. The all-`FF` type is also on surprisingly few disks.

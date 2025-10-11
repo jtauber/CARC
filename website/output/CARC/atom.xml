@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-11T14:12:51.884698-04:00</updated>
+  <updated>2025-10-11T17:31:27.177509-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,10 +11,28 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Why So Many Sectors Start with 00 11 0X 00</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/11/why-so-many-sectors-start-with-00-11-0x-00/" rel="alternate" type="text/html" title="Why So Many Sectors Start with 00 11 0X 00"/>
+    <published>2025-10-11</published>
+    <updated>2025-10-11T17:31:27.177509-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/11/why-so-many-sectors-start-with-00-11-0x-00/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/11/why-so-many-sectors-start-with-00-11-0x-00/">&lt;p&gt;As we saw in the previous post, ten out of the top 20 sector types start with &lt;code&gt;00 11 0X 00&lt;/code&gt; and continue with all zeros.
+I suspected why this might be the case and I’ve now confirmed the reason.&lt;/p&gt;
+&lt;p&gt;Note there are even &lt;em&gt;more&lt;/em&gt; sector types that &lt;em&gt;start&lt;/em&gt; with the sequence &lt;code&gt;00 11 0X 00&lt;/code&gt; if you don’t require the rest of the sector to be zeros.&lt;/p&gt;
+&lt;p&gt;I immediately recognized the significance of &lt;code&gt;11&lt;/code&gt; (decimal 17) as the track number of the catalog (i.e. directory) on Apple DOS disks and suspected the byte that followed was a sector number (it&#39;s always of the form &lt;code&gt;0X&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Turns out almost all instances of this pattern were on other sectors on track &lt;code&gt;11&lt;/code&gt;. Sector &lt;code&gt;0F&lt;/code&gt; would have &lt;code&gt;00 11 0E 00&lt;/code&gt;, sector &lt;code&gt;0E&lt;/code&gt; would have &lt;code&gt;00 11 0D 00&lt;/code&gt; and so on. This is how the disk catalog is laid out in Apple DOS 3.3, with each catalog sector pointing to the next catalog sector (usually the sector before on track &lt;code&gt;11&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;The all-zeros cases are just when that catalog sector is not needed (because there aren’t enough files). This explains why lower sector numbers came up more in the previous post (because lower catalog sectors are more likely to be empty than higher ones).&lt;/p&gt;
+&lt;p&gt;Just over half the disks in the Apple II Disk corpus seem to follow this standard DOS 3.3 catalog layout which will be crucial in working at the file rather than disk level in future explorations.&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">As we saw in the previous post, ten out of the top 20 sector types start with &lt;code&gt;00 11 0X 00&lt;/code&gt; and continue with all zeros.
+I suspected why this might be the case and I’ve now confirmed the reason.</summary>
+  </entry><entry>
     <title type="html">Sector Types in the Apple II Disk Corpus</title>
     <link href="https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Sector Types in the Apple II Disk Corpus"/>
     <published>2025-10-11</published>
-    <updated>2025-10-11T14:12:51.884698-04:00</updated>
+    <updated>2025-10-11T15:55:51.261343-04:00</updated>
     <id>https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/</id>
     <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/11/sector-types-in-the-apple-ii-disk-corpus/">&lt;p&gt;A regular Apple II floppy disk has 560 sectors of 256 bytes.
 Across the 12,450 disks in the current corpus, that’s &lt;strong&gt;6,972,000&lt;/strong&gt; sectors.
@@ -24,7 +42,7 @@ is a sector of all zeros which occurs &lt;strong&gt;1,647,906&lt;/strong&gt; tim
 &lt;p&gt;Below is a listing of the top 20 sector types and how many disks they appear on.
 There is a lot more that could (and will) be done here, including clustering disks based on
 a distance metric of how many sector types they have in common.
-But for now there are few things that stand out.&lt;/p&gt;
+But for now there are a few things that stand out.&lt;/p&gt;
 &lt;p&gt;It is interesting that the second and third most common sector types are on so few disks.
 It will be worth investigating what those disks are. The all-&lt;code&gt;FF&lt;/code&gt; type is also on surprisingly few disks.&lt;/p&gt;
 &lt;p&gt;It is also interesting that the next eight (as well as two more in the top 20) are of the form:&lt;br /&gt;
