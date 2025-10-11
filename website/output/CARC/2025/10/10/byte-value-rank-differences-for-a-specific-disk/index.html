@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ranking Byte Values in the Apple II Disk Corpus | CARC</title>
+    <title>Byte Value Rank Differences For A Specific Disk | CARC</title>
     
-  <meta name="description" content="Which are the most common byte values across the 12,450 Apple II disk images?">
+  <meta name="description" content="Having ranked all the byte values across 12,450 Apple II disk images, how might a specific disk differ?">
 
     <link rel="stylesheet" href="/CARC/style.css?683f47e173323392bd1d69c506bd6ce6">
     <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
@@ -61,18 +61,15 @@
   <div class="next">
   
     <span>←</span>
-    <a href="/CARC/2025/10/09/gathering-apple-ii-disk-images/">Gathering Apple II Disk Images</a>
+    <a href="/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/">Ranking Byte Values in the Apple II Disk Corpus</a>
   
   </div>
   <div class="prev">
   
-    <a href="/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/">Byte Value Rank Differences For A Specific Disk</a>
-    <span>→</span>
-  
   </div>
 </div>
 
-    <h1>Ranking Byte Values in the Apple II Disk Corpus</h1>
+    <h1>Byte Value Rank Differences For A Specific Disk</h1>
     <div class="post-metadata">
   <span class="post-date">October 10, 2025</span>
   
@@ -81,15 +78,12 @@
 </div>
 
     <div class="post-content">
-      <p>Which are the most common byte values across the 12,450 Apple II disk images?</p>
-<p>Here is a heatmap showing the rank of each byte value. Note this is the <strong>rank</strong>,
-not the frequency.</p>
-<p><img src="/CARC/figures/byte_rank_heatmap.svg"></p>
-<p>The top 16 byte values (most common to less common) are:<br />
-<code>00 20 A0 FF 80 01 7F D0 03 8D 02 AA 30 A9 3A 22</code> ...</p>
-<p>The bottom 16 byte values (more common to least common) are:<br />
-... <code>93 5C 7D 9C 5E DC 92 DE 9A 7B 97 DA 7A 8B 5B 9B</code></p>
-<p>It will be fascinating to see if this varies on other platforms and also by disk category (e.g. games vs others).</p>
+      <p>Having ranked all the byte values across 12,450 Apple II disk images, how might a specific disk differ?</p>
+<p>As an initial experiment, I ranked the byte values on the Ultima IV boot disk and generated this heatmap
+showing how much the rank on the Ultima IV book disk differs from that across the entire corpus.</p>
+<p>Green indicates higher ranked than in the full corpus and red indicates lower ranked.</p>
+<p><img src="/CARC/figures/byte_rank_diff.svg"></p>
+<p>This approach could be applied to any individual disk but also any subcorpora (say just DOS 3.3 disks or just text adventure games).</p>
     </div>
 
     
@@ -98,13 +92,10 @@ not the frequency.</p>
   <div class="next">
   
     <span>←</span>
-    <a href="/CARC/2025/10/09/gathering-apple-ii-disk-images/">Gathering Apple II Disk Images</a>
+    <a href="/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/">Ranking Byte Values in the Apple II Disk Corpus</a>
   
   </div>
   <div class="prev">
-  
-    <a href="/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/">Byte Value Rank Differences For A Specific Disk</a>
-    <span>→</span>
   
   </div>
 </div>

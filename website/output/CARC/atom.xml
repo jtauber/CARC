@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-10T20:30:37.674052-04:00</updated>
+  <updated>2025-10-10T22:56:07.893092-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,22 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Byte Value Rank Differences For A Specific Disk</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/" rel="alternate" type="text/html" title="Byte Value Rank Differences For A Specific Disk"/>
+    <published>2025-10-10</published>
+    <updated>2025-10-10T22:56:07.893092-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/10/byte-value-rank-differences-for-a-specific-disk/">&lt;p&gt;Having ranked all the byte values across 12,450 Apple II disk images, how might a specific disk differ?&lt;/p&gt;
+&lt;p&gt;As an initial experiment, I ranked the byte values on the Ultima IV boot disk and generated this heatmap
+showing how much the rank on the Ultima IV book disk differs from that across the entire corpus.&lt;/p&gt;
+&lt;p&gt;Green indicates higher ranked than in the full corpus and red indicates lower ranked.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/CARC/figures/byte_rank_diff.svg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This approach could be applied to any individual disk but also any subcorpora (say just DOS 3.3 disks or just text adventure games).&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">Having ranked all the byte values across 12,450 Apple II disk images, how might a specific disk differ?</summary>
+  </entry><entry>
     <title type="html">Ranking Byte Values in the Apple II Disk Corpus</title>
     <link href="https://jtauber.github.io/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Ranking Byte Values in the Apple II Disk Corpus"/>
     <published>2025-10-10</published>

@@ -1,0 +1,578 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+<rect x="0" y="0" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="8" y="11" font-size="8" text-anchor="middle" fill="black">00</text>
+<rect x="16" y="0" width="16" height="16" fill="hsl(120, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="24" y="11" font-size="8" text-anchor="middle" fill="black">01</text>
+<rect x="32" y="0" width="16" height="16" fill="hsl(120, 0.390625%, 99.609375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="11" font-size="8" text-anchor="middle" fill="black">02</text>
+<rect x="48" y="0" width="16" height="16" fill="hsl(0, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="11" font-size="8" text-anchor="middle" fill="black">03</text>
+<rect x="64" y="0" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="11" font-size="8" text-anchor="middle" fill="black">04</text>
+<rect x="80" y="0" width="16" height="16" fill="hsl(120, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="88" y="11" font-size="8" text-anchor="middle" fill="black">05</text>
+<rect x="96" y="0" width="16" height="16" fill="hsl(0, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="104" y="11" font-size="8" text-anchor="middle" fill="black">06</text>
+<rect x="112" y="0" width="16" height="16" fill="hsl(0, 4.296875%, 95.703125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="11" font-size="8" text-anchor="middle" fill="black">07</text>
+<rect x="128" y="0" width="16" height="16" fill="hsl(0, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="136" y="11" font-size="8" text-anchor="middle" fill="black">08</text>
+<rect x="144" y="0" width="16" height="16" fill="hsl(120, 7.421875%, 92.578125%)"/>
+<text font-family="IBM Plex Mono" x="152" y="11" font-size="8" text-anchor="middle" fill="black">09</text>
+<rect x="160" y="0" width="16" height="16" fill="hsl(0, 1.5625%, 98.4375%)"/>
+<text font-family="IBM Plex Mono" x="168" y="11" font-size="8" text-anchor="middle" fill="black">0A</text>
+<rect x="176" y="0" width="16" height="16" fill="hsl(0, 14.84375%, 85.15625%)"/>
+<text font-family="IBM Plex Mono" x="184" y="11" font-size="8" text-anchor="middle" fill="black">0B</text>
+<rect x="192" y="0" width="16" height="16" fill="hsl(0, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="200" y="11" font-size="8" text-anchor="middle" fill="black">0C</text>
+<rect x="208" y="0" width="16" height="16" fill="hsl(120, 13.28125%, 86.71875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="11" font-size="8" text-anchor="middle" fill="black">0D</text>
+<rect x="224" y="0" width="16" height="16" fill="hsl(0, 11.328125%, 88.671875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="11" font-size="8" text-anchor="middle" fill="black">0E</text>
+<rect x="240" y="0" width="16" height="16" fill="hsl(0, 8.59375%, 91.40625%)"/>
+<text font-family="IBM Plex Mono" x="248" y="11" font-size="8" text-anchor="middle" fill="black">0F</text>
+<rect x="0" y="16" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="8" y="27" font-size="8" text-anchor="middle" fill="black">10</text>
+<rect x="16" y="16" width="16" height="16" fill="hsl(0, 11.71875%, 88.28125%)"/>
+<text font-family="IBM Plex Mono" x="24" y="27" font-size="8" text-anchor="middle" fill="black">11</text>
+<rect x="32" y="16" width="16" height="16" fill="hsl(120, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="40" y="27" font-size="8" text-anchor="middle" fill="black">12</text>
+<rect x="48" y="16" width="16" height="16" fill="hsl(120, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="27" font-size="8" text-anchor="middle" fill="black">13</text>
+<rect x="64" y="16" width="16" height="16" fill="hsl(0, 3.515625%, 96.484375%)"/>
+<text font-family="IBM Plex Mono" x="72" y="27" font-size="8" text-anchor="middle" fill="black">14</text>
+<rect x="80" y="16" width="16" height="16" fill="hsl(0, 15.625%, 84.375%)"/>
+<text font-family="IBM Plex Mono" x="88" y="27" font-size="8" text-anchor="middle" fill="black">15</text>
+<rect x="96" y="16" width="16" height="16" fill="hsl(0, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="104" y="27" font-size="8" text-anchor="middle" fill="black">16</text>
+<rect x="112" y="16" width="16" height="16" fill="hsl(120, 4.296875%, 95.703125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="27" font-size="8" text-anchor="middle" fill="black">17</text>
+<rect x="128" y="16" width="16" height="16" fill="hsl(0, 12.890625%, 87.109375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="27" font-size="8" text-anchor="middle" fill="black">18</text>
+<rect x="144" y="16" width="16" height="16" fill="hsl(0, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="152" y="27" font-size="8" text-anchor="middle" fill="black">19</text>
+<rect x="160" y="16" width="16" height="16" fill="hsl(120, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="168" y="27" font-size="8" text-anchor="middle" fill="black">1A</text>
+<rect x="176" y="16" width="16" height="16" fill="hsl(0, 34.765625%, 65.234375%)"/>
+<text font-family="IBM Plex Mono" x="184" y="27" font-size="8" text-anchor="middle" fill="black">1B</text>
+<rect x="192" y="16" width="16" height="16" fill="hsl(0, 10.9375%, 89.0625%)"/>
+<text font-family="IBM Plex Mono" x="200" y="27" font-size="8" text-anchor="middle" fill="black">1C</text>
+<rect x="208" y="16" width="16" height="16" fill="hsl(0, 26.171875%, 73.828125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="27" font-size="8" text-anchor="middle" fill="black">1D</text>
+<rect x="224" y="16" width="16" height="16" fill="hsl(0, 16.015625%, 83.984375%)"/>
+<text font-family="IBM Plex Mono" x="232" y="27" font-size="8" text-anchor="middle" fill="black">1E</text>
+<rect x="240" y="16" width="16" height="16" fill="hsl(0, 21.484375%, 78.515625%)"/>
+<text font-family="IBM Plex Mono" x="248" y="27" font-size="8" text-anchor="middle" fill="black">1F</text>
+<rect x="0" y="32" width="16" height="16" fill="hsl(120, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="8" y="43" font-size="8" text-anchor="middle" fill="black">20</text>
+<rect x="16" y="32" width="16" height="16" fill="hsl(0, 19.140625%, 80.859375%)"/>
+<text font-family="IBM Plex Mono" x="24" y="43" font-size="8" text-anchor="middle" fill="black">21</text>
+<rect x="32" y="32" width="16" height="16" fill="hsl(120, 9.765625%, 90.234375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="43" font-size="8" text-anchor="middle" fill="black">22</text>
+<rect x="48" y="32" width="16" height="16" fill="hsl(0, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="56" y="43" font-size="8" text-anchor="middle" fill="black">23</text>
+<rect x="64" y="32" width="16" height="16" fill="hsl(120, 30.46875%, 69.53125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="43" font-size="8" text-anchor="middle" fill="black">24</text>
+<rect x="80" y="32" width="16" height="16" fill="hsl(120, 9.765625%, 90.234375%)"/>
+<text font-family="IBM Plex Mono" x="88" y="43" font-size="8" text-anchor="middle" fill="black">25</text>
+<rect x="96" y="32" width="16" height="16" fill="hsl(120, 5.46875%, 94.53125%)"/>
+<text font-family="IBM Plex Mono" x="104" y="43" font-size="8" text-anchor="middle" fill="black">26</text>
+<rect x="112" y="32" width="16" height="16" fill="hsl(0, 26.953125%, 73.046875%)"/>
+<text font-family="IBM Plex Mono" x="120" y="43" font-size="8" text-anchor="middle" fill="black">27</text>
+<rect x="128" y="32" width="16" height="16" fill="hsl(120, 13.28125%, 86.71875%)"/>
+<text font-family="IBM Plex Mono" x="136" y="43" font-size="8" text-anchor="middle" fill="black">28</text>
+<rect x="144" y="32" width="16" height="16" fill="hsl(120, 17.96875%, 82.03125%)"/>
+<text font-family="IBM Plex Mono" x="152" y="43" font-size="8" text-anchor="middle" fill="black">29</text>
+<rect x="160" y="32" width="16" height="16" fill="hsl(120, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="168" y="43" font-size="8" text-anchor="middle" fill="black">2A</text>
+<rect x="176" y="32" width="16" height="16" fill="hsl(0, 30.078125%, 69.921875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="43" font-size="8" text-anchor="middle" fill="black">2B</text>
+<rect x="192" y="32" width="16" height="16" fill="hsl(120, 25.390625%, 74.609375%)"/>
+<text font-family="IBM Plex Mono" x="200" y="43" font-size="8" text-anchor="middle" fill="black">2C</text>
+<rect x="208" y="32" width="16" height="16" fill="hsl(120, 46.875%, 53.125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="43" font-size="8" text-anchor="middle" fill="black">2D</text>
+<rect x="224" y="32" width="16" height="16" fill="hsl(120, 7.8125%, 92.1875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="43" font-size="8" text-anchor="middle" fill="black">2E</text>
+<rect x="240" y="32" width="16" height="16" fill="hsl(0, 0.390625%, 99.609375%)"/>
+<text font-family="IBM Plex Mono" x="248" y="43" font-size="8" text-anchor="middle" fill="black">2F</text>
+<rect x="0" y="48" width="16" height="16" fill="hsl(120, 7.421875%, 92.578125%)"/>
+<text font-family="IBM Plex Mono" x="8" y="59" font-size="8" text-anchor="middle" fill="black">30</text>
+<rect x="16" y="48" width="16" height="16" fill="hsl(120, 51.5625%, 48.4375%)"/>
+<text font-family="IBM Plex Mono" x="24" y="59" font-size="8" text-anchor="middle" fill="#EEE">31</text>
+<rect x="32" y="48" width="16" height="16" fill="hsl(120, 43.359375%, 56.640625%)"/>
+<text font-family="IBM Plex Mono" x="40" y="59" font-size="8" text-anchor="middle" fill="black">32</text>
+<rect x="48" y="48" width="16" height="16" fill="hsl(120, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="59" font-size="8" text-anchor="middle" fill="black">33</text>
+<rect x="64" y="48" width="16" height="16" fill="hsl(120, 54.296875%, 45.703125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="59" font-size="8" text-anchor="middle" fill="#EEE">34</text>
+<rect x="80" y="48" width="16" height="16" fill="hsl(120, 19.53125%, 80.46875%)"/>
+<text font-family="IBM Plex Mono" x="88" y="59" font-size="8" text-anchor="middle" fill="black">35</text>
+<rect x="96" y="48" width="16" height="16" fill="hsl(120, 33.59375%, 66.40625%)"/>
+<text font-family="IBM Plex Mono" x="104" y="59" font-size="8" text-anchor="middle" fill="black">36</text>
+<rect x="112" y="48" width="16" height="16" fill="hsl(120, 11.328125%, 88.671875%)"/>
+<text font-family="IBM Plex Mono" x="120" y="59" font-size="8" text-anchor="middle" fill="black">37</text>
+<rect x="128" y="48" width="16" height="16" fill="hsl(0, 4.296875%, 95.703125%)"/>
+<text font-family="IBM Plex Mono" x="136" y="59" font-size="8" text-anchor="middle" fill="black">38</text>
+<rect x="144" y="48" width="16" height="16" fill="hsl(120, 37.5%, 62.5%)"/>
+<text font-family="IBM Plex Mono" x="152" y="59" font-size="8" text-anchor="middle" fill="black">39</text>
+<rect x="160" y="48" width="16" height="16" fill="hsl(120, 76.171875%, 23.828125%)"/>
+<text font-family="IBM Plex Mono" x="168" y="59" font-size="8" text-anchor="middle" fill="#EEE">3A</text>
+<rect x="176" y="48" width="16" height="16" fill="hsl(120, 17.96875%, 82.03125%)"/>
+<text font-family="IBM Plex Mono" x="184" y="59" font-size="8" text-anchor="middle" fill="black">3B</text>
+<rect x="192" y="48" width="16" height="16" fill="hsl(0, 15.234375%, 84.765625%)"/>
+<text font-family="IBM Plex Mono" x="200" y="59" font-size="8" text-anchor="middle" fill="black">3C</text>
+<rect x="208" y="48" width="16" height="16" fill="hsl(120, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="59" font-size="8" text-anchor="middle" fill="black">3D</text>
+<rect x="224" y="48" width="16" height="16" fill="hsl(0, 7.8125%, 92.1875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="59" font-size="8" text-anchor="middle" fill="black">3E</text>
+<rect x="240" y="48" width="16" height="16" fill="hsl(120, 12.109375%, 87.890625%)"/>
+<text font-family="IBM Plex Mono" x="248" y="59" font-size="8" text-anchor="middle" fill="black">3F</text>
+<rect x="0" y="64" width="16" height="16" fill="hsl(0, 6.640625%, 93.359375%)"/>
+<text font-family="IBM Plex Mono" x="8" y="75" font-size="8" text-anchor="middle" fill="black">40</text>
+<rect x="16" y="64" width="16" height="16" fill="hsl(120, 24.21875%, 75.78125%)"/>
+<text font-family="IBM Plex Mono" x="24" y="75" font-size="8" text-anchor="middle" fill="black">41</text>
+<rect x="32" y="64" width="16" height="16" fill="hsl(120, 19.140625%, 80.859375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="75" font-size="8" text-anchor="middle" fill="black">42</text>
+<rect x="48" y="64" width="16" height="16" fill="hsl(120, 39.453125%, 60.546875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="75" font-size="8" text-anchor="middle" fill="black">43</text>
+<rect x="64" y="64" width="16" height="16" fill="hsl(120, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="72" y="75" font-size="8" text-anchor="middle" fill="black">44</text>
+<rect x="80" y="64" width="16" height="16" fill="hsl(120, 39.453125%, 60.546875%)"/>
+<text font-family="IBM Plex Mono" x="88" y="75" font-size="8" text-anchor="middle" fill="black">45</text>
+<rect x="96" y="64" width="16" height="16" fill="hsl(120, 30.078125%, 69.921875%)"/>
+<text font-family="IBM Plex Mono" x="104" y="75" font-size="8" text-anchor="middle" fill="black">46</text>
+<rect x="112" y="64" width="16" height="16" fill="hsl(120, 23.4375%, 76.5625%)"/>
+<text font-family="IBM Plex Mono" x="120" y="75" font-size="8" text-anchor="middle" fill="black">47</text>
+<rect x="128" y="64" width="16" height="16" fill="hsl(120, 26.5625%, 73.4375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="75" font-size="8" text-anchor="middle" fill="black">48</text>
+<rect x="144" y="64" width="16" height="16" fill="hsl(120, 70.703125%, 29.296875%)"/>
+<text font-family="IBM Plex Mono" x="152" y="75" font-size="8" text-anchor="middle" fill="#EEE">49</text>
+<rect x="160" y="64" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="168" y="75" font-size="8" text-anchor="middle" fill="black">4A</text>
+<rect x="176" y="64" width="16" height="16" fill="hsl(120, 16.40625%, 83.59375%)"/>
+<text font-family="IBM Plex Mono" x="184" y="75" font-size="8" text-anchor="middle" fill="black">4B</text>
+<rect x="192" y="64" width="16" height="16" fill="hsl(120, 3.515625%, 96.484375%)"/>
+<text font-family="IBM Plex Mono" x="200" y="75" font-size="8" text-anchor="middle" fill="black">4C</text>
+<rect x="208" y="64" width="16" height="16" fill="hsl(120, 41.796875%, 58.203125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="75" font-size="8" text-anchor="middle" fill="black">4D</text>
+<rect x="224" y="64" width="16" height="16" fill="hsl(120, 32.8125%, 67.1875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="75" font-size="8" text-anchor="middle" fill="black">4E</text>
+<rect x="240" y="64" width="16" height="16" fill="hsl(120, 45.3125%, 54.6875%)"/>
+<text font-family="IBM Plex Mono" x="248" y="75" font-size="8" text-anchor="middle" fill="black">4F</text>
+<rect x="0" y="80" width="16" height="16" fill="hsl(120, 20.703125%, 79.296875%)"/>
+<text font-family="IBM Plex Mono" x="8" y="91" font-size="8" text-anchor="middle" fill="black">50</text>
+<rect x="16" y="80" width="16" height="16" fill="hsl(0, 25.390625%, 74.609375%)"/>
+<text font-family="IBM Plex Mono" x="24" y="91" font-size="8" text-anchor="middle" fill="black">51</text>
+<rect x="32" y="80" width="16" height="16" fill="hsl(120, 69.140625%, 30.859375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="91" font-size="8" text-anchor="middle" fill="#EEE">52</text>
+<rect x="48" y="80" width="16" height="16" fill="hsl(120, 69.921875%, 30.078125%)"/>
+<text font-family="IBM Plex Mono" x="56" y="91" font-size="8" text-anchor="middle" fill="#EEE">53</text>
+<rect x="64" y="80" width="16" height="16" fill="hsl(120, 26.171875%, 73.828125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="91" font-size="8" text-anchor="middle" fill="black">54</text>
+<rect x="80" y="80" width="16" height="16" fill="hsl(120, 10.546875%, 89.453125%)"/>
+<text font-family="IBM Plex Mono" x="88" y="91" font-size="8" text-anchor="middle" fill="black">55</text>
+<rect x="96" y="80" width="16" height="16" fill="hsl(120, 24.609375%, 75.390625%)"/>
+<text font-family="IBM Plex Mono" x="104" y="91" font-size="8" text-anchor="middle" fill="black">56</text>
+<rect x="112" y="80" width="16" height="16" fill="hsl(120, 17.1875%, 82.8125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="91" font-size="8" text-anchor="middle" fill="black">57</text>
+<rect x="128" y="80" width="16" height="16" fill="hsl(120, 22.65625%, 77.34375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="91" font-size="8" text-anchor="middle" fill="black">58</text>
+<rect x="144" y="80" width="16" height="16" fill="hsl(120, 41.40625%, 58.59375%)"/>
+<text font-family="IBM Plex Mono" x="152" y="91" font-size="8" text-anchor="middle" fill="black">59</text>
+<rect x="160" y="80" width="16" height="16" fill="hsl(120, 18.359375%, 81.640625%)"/>
+<text font-family="IBM Plex Mono" x="168" y="91" font-size="8" text-anchor="middle" fill="black">5A</text>
+<rect x="176" y="80" width="16" height="16" fill="hsl(0, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="91" font-size="8" text-anchor="middle" fill="black">5B</text>
+<rect x="192" y="80" width="16" height="16" fill="hsl(0, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="200" y="91" font-size="8" text-anchor="middle" fill="black">5C</text>
+<rect x="208" y="80" width="16" height="16" fill="hsl(0, 7.421875%, 92.578125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="91" font-size="8" text-anchor="middle" fill="black">5D</text>
+<rect x="224" y="80" width="16" height="16" fill="hsl(0, 4.6875%, 95.3125%)"/>
+<text font-family="IBM Plex Mono" x="232" y="91" font-size="8" text-anchor="middle" fill="black">5E</text>
+<rect x="240" y="80" width="16" height="16" fill="hsl(120, 10.546875%, 89.453125%)"/>
+<text font-family="IBM Plex Mono" x="248" y="91" font-size="8" text-anchor="middle" fill="black">5F</text>
+<rect x="0" y="96" width="16" height="16" fill="hsl(0, 7.03125%, 92.96875%)"/>
+<text font-family="IBM Plex Mono" x="8" y="107" font-size="8" text-anchor="middle" fill="black">60</text>
+<rect x="16" y="96" width="16" height="16" fill="hsl(120, 39.84375%, 60.15625%)"/>
+<text font-family="IBM Plex Mono" x="24" y="107" font-size="8" text-anchor="middle" fill="black">61</text>
+<rect x="32" y="96" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="40" y="107" font-size="8" text-anchor="middle" fill="black">62</text>
+<rect x="48" y="96" width="16" height="16" fill="hsl(0, 14.453125%, 85.546875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="107" font-size="8" text-anchor="middle" fill="black">63</text>
+<rect x="64" y="96" width="16" height="16" fill="hsl(120, 14.84375%, 85.15625%)"/>
+<text font-family="IBM Plex Mono" x="72" y="107" font-size="8" text-anchor="middle" fill="black">64</text>
+<rect x="80" y="96" width="16" height="16" fill="hsl(120, 65.234375%, 34.765625%)"/>
+<text font-family="IBM Plex Mono" x="88" y="107" font-size="8" text-anchor="middle" fill="#EEE">65</text>
+<rect x="96" y="96" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="104" y="107" font-size="8" text-anchor="middle" fill="black">66</text>
+<rect x="112" y="96" width="16" height="16" fill="hsl(120, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="120" y="107" font-size="8" text-anchor="middle" fill="black">67</text>
+<rect x="128" y="96" width="16" height="16" fill="hsl(120, 18.359375%, 81.640625%)"/>
+<text font-family="IBM Plex Mono" x="136" y="107" font-size="8" text-anchor="middle" fill="black">68</text>
+<rect x="144" y="96" width="16" height="16" fill="hsl(120, 37.109375%, 62.890625%)"/>
+<text font-family="IBM Plex Mono" x="152" y="107" font-size="8" text-anchor="middle" fill="black">69</text>
+<rect x="160" y="96" width="16" height="16" fill="hsl(0, 17.578125%, 82.421875%)"/>
+<text font-family="IBM Plex Mono" x="168" y="107" font-size="8" text-anchor="middle" fill="black">6A</text>
+<rect x="176" y="96" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="107" font-size="8" text-anchor="middle" fill="black">6B</text>
+<rect x="192" y="96" width="16" height="16" fill="hsl(120, 18.359375%, 81.640625%)"/>
+<text font-family="IBM Plex Mono" x="200" y="107" font-size="8" text-anchor="middle" fill="black">6C</text>
+<rect x="208" y="96" width="16" height="16" fill="hsl(120, 12.890625%, 87.109375%)"/>
+<text font-family="IBM Plex Mono" x="216" y="107" font-size="8" text-anchor="middle" fill="black">6D</text>
+<rect x="224" y="96" width="16" height="16" fill="hsl(120, 51.953125%, 48.046875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="107" font-size="8" text-anchor="middle" fill="#EEE">6E</text>
+<rect x="240" y="96" width="16" height="16" fill="hsl(120, 60.15625%, 39.84375%)"/>
+<text font-family="IBM Plex Mono" x="248" y="107" font-size="8" text-anchor="middle" fill="#EEE">6F</text>
+<rect x="0" y="112" width="16" height="16" fill="hsl(0, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="8" y="123" font-size="8" text-anchor="middle" fill="black">70</text>
+<rect x="16" y="112" width="16" height="16" fill="hsl(0, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="24" y="123" font-size="8" text-anchor="middle" fill="black">71</text>
+<rect x="32" y="112" width="16" height="16" fill="hsl(120, 64.453125%, 35.546875%)"/>
+<text font-family="IBM Plex Mono" x="40" y="123" font-size="8" text-anchor="middle" fill="#EEE">72</text>
+<rect x="48" y="112" width="16" height="16" fill="hsl(120, 57.03125%, 42.96875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="123" font-size="8" text-anchor="middle" fill="#EEE">73</text>
+<rect x="64" y="112" width="16" height="16" fill="hsl(120, 57.03125%, 42.96875%)"/>
+<text font-family="IBM Plex Mono" x="72" y="123" font-size="8" text-anchor="middle" fill="#EEE">74</text>
+<rect x="80" y="112" width="16" height="16" fill="hsl(120, 35.15625%, 64.84375%)"/>
+<text font-family="IBM Plex Mono" x="88" y="123" font-size="8" text-anchor="middle" fill="black">75</text>
+<rect x="96" y="112" width="16" height="16" fill="hsl(0, 1.5625%, 98.4375%)"/>
+<text font-family="IBM Plex Mono" x="104" y="123" font-size="8" text-anchor="middle" fill="black">76</text>
+<rect x="112" y="112" width="16" height="16" fill="hsl(120, 2.34375%, 97.65625%)"/>
+<text font-family="IBM Plex Mono" x="120" y="123" font-size="8" text-anchor="middle" fill="black">77</text>
+<rect x="128" y="112" width="16" height="16" fill="hsl(0, 28.125%, 71.875%)"/>
+<text font-family="IBM Plex Mono" x="136" y="123" font-size="8" text-anchor="middle" fill="black">78</text>
+<rect x="144" y="112" width="16" height="16" fill="hsl(120, 30.46875%, 69.53125%)"/>
+<text font-family="IBM Plex Mono" x="152" y="123" font-size="8" text-anchor="middle" fill="black">79</text>
+<rect x="160" y="112" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="168" y="123" font-size="8" text-anchor="middle" fill="black">7A</text>
+<rect x="176" y="112" width="16" height="16" fill="hsl(0, 10.9375%, 89.0625%)"/>
+<text font-family="IBM Plex Mono" x="184" y="123" font-size="8" text-anchor="middle" fill="black">7B</text>
+<rect x="192" y="112" width="16" height="16" fill="hsl(0, 30.078125%, 69.921875%)"/>
+<text font-family="IBM Plex Mono" x="200" y="123" font-size="8" text-anchor="middle" fill="black">7C</text>
+<rect x="208" y="112" width="16" height="16" fill="hsl(0, 17.578125%, 82.421875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="123" font-size="8" text-anchor="middle" fill="black">7D</text>
+<rect x="224" y="112" width="16" height="16" fill="hsl(0, 25.0%, 75.0%)"/>
+<text font-family="IBM Plex Mono" x="232" y="123" font-size="8" text-anchor="middle" fill="black">7E</text>
+<rect x="240" y="112" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="248" y="123" font-size="8" text-anchor="middle" fill="black">7F</text>
+<rect x="0" y="128" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="8" y="139" font-size="8" text-anchor="middle" fill="black">80</text>
+<rect x="16" y="128" width="16" height="16" fill="hsl(0, 19.921875%, 80.078125%)"/>
+<text font-family="IBM Plex Mono" x="24" y="139" font-size="8" text-anchor="middle" fill="black">81</text>
+<rect x="32" y="128" width="16" height="16" fill="hsl(0, 15.625%, 84.375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="139" font-size="8" text-anchor="middle" fill="black">82</text>
+<rect x="48" y="128" width="16" height="16" fill="hsl(0, 37.109375%, 62.890625%)"/>
+<text font-family="IBM Plex Mono" x="56" y="139" font-size="8" text-anchor="middle" fill="black">83</text>
+<rect x="64" y="128" width="16" height="16" fill="hsl(0, 31.640625%, 68.359375%)"/>
+<text font-family="IBM Plex Mono" x="72" y="139" font-size="8" text-anchor="middle" fill="black">84</text>
+<rect x="80" y="128" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="88" y="139" font-size="8" text-anchor="middle" fill="black">85</text>
+<rect x="96" y="128" width="16" height="16" fill="hsl(0, 42.1875%, 57.8125%)"/>
+<text font-family="IBM Plex Mono" x="104" y="139" font-size="8" text-anchor="middle" fill="black">86</text>
+<rect x="112" y="128" width="16" height="16" fill="hsl(0, 42.1875%, 57.8125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="139" font-size="8" text-anchor="middle" fill="black">87</text>
+<rect x="128" y="128" width="16" height="16" fill="hsl(120, 0.390625%, 99.609375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="139" font-size="8" text-anchor="middle" fill="black">88</text>
+<rect x="144" y="128" width="16" height="16" fill="hsl(0, 35.15625%, 64.84375%)"/>
+<text font-family="IBM Plex Mono" x="152" y="139" font-size="8" text-anchor="middle" fill="black">89</text>
+<rect x="160" y="128" width="16" height="16" fill="hsl(0, 37.890625%, 62.109375%)"/>
+<text font-family="IBM Plex Mono" x="168" y="139" font-size="8" text-anchor="middle" fill="black">8A</text>
+<rect x="176" y="128" width="16" height="16" fill="hsl(0, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="184" y="139" font-size="8" text-anchor="middle" fill="black">8B</text>
+<rect x="192" y="128" width="16" height="16" fill="hsl(0, 44.53125%, 55.46875%)"/>
+<text font-family="IBM Plex Mono" x="200" y="139" font-size="8" text-anchor="middle" fill="black">8C</text>
+<rect x="208" y="128" width="16" height="16" fill="hsl(120, 7.421875%, 92.578125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="139" font-size="8" text-anchor="middle" fill="black">8D</text>
+<rect x="224" y="128" width="16" height="16" fill="hsl(120, 1.5625%, 98.4375%)"/>
+<text font-family="IBM Plex Mono" x="232" y="139" font-size="8" text-anchor="middle" fill="black">8E</text>
+<rect x="240" y="128" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="248" y="139" font-size="8" text-anchor="middle" fill="black">8F</text>
+<rect x="0" y="144" width="16" height="16" fill="hsl(0, 7.03125%, 92.96875%)"/>
+<text font-family="IBM Plex Mono" x="8" y="155" font-size="8" text-anchor="middle" fill="black">90</text>
+<rect x="16" y="144" width="16" height="16" fill="hsl(0, 7.03125%, 92.96875%)"/>
+<text font-family="IBM Plex Mono" x="24" y="155" font-size="8" text-anchor="middle" fill="black">91</text>
+<rect x="32" y="144" width="16" height="16" fill="hsl(0, 34.375%, 65.625%)"/>
+<text font-family="IBM Plex Mono" x="40" y="155" font-size="8" text-anchor="middle" fill="black">92</text>
+<rect x="48" y="144" width="16" height="16" fill="hsl(120, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="56" y="155" font-size="8" text-anchor="middle" fill="black">93</text>
+<rect x="64" y="144" width="16" height="16" fill="hsl(0, 24.21875%, 75.78125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="155" font-size="8" text-anchor="middle" fill="black">94</text>
+<rect x="80" y="144" width="16" height="16" fill="hsl(0, 31.25%, 68.75%)"/>
+<text font-family="IBM Plex Mono" x="88" y="155" font-size="8" text-anchor="middle" fill="black">95</text>
+<rect x="96" y="144" width="16" height="16" fill="hsl(120, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="104" y="155" font-size="8" text-anchor="middle" fill="black">96</text>
+<rect x="112" y="144" width="16" height="16" fill="hsl(120, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="155" font-size="8" text-anchor="middle" fill="black">97</text>
+<rect x="128" y="144" width="16" height="16" fill="hsl(0, 55.859375%, 44.140625%)"/>
+<text font-family="IBM Plex Mono" x="136" y="155" font-size="8" text-anchor="middle" fill="#EEE">98</text>
+<rect x="144" y="144" width="16" height="16" fill="hsl(0, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="152" y="155" font-size="8" text-anchor="middle" fill="black">99</text>
+<rect x="160" y="144" width="16" height="16" fill="hsl(120, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="168" y="155" font-size="8" text-anchor="middle" fill="black">9A</text>
+<rect x="176" y="144" width="16" height="16" fill="hsl(0, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="184" y="155" font-size="8" text-anchor="middle" fill="black">9B</text>
+<rect x="192" y="144" width="16" height="16" fill="hsl(0, 9.765625%, 90.234375%)"/>
+<text font-family="IBM Plex Mono" x="200" y="155" font-size="8" text-anchor="middle" fill="black">9C</text>
+<rect x="208" y="144" width="16" height="16" fill="hsl(0, 16.796875%, 83.203125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="155" font-size="8" text-anchor="middle" fill="black">9D</text>
+<rect x="224" y="144" width="16" height="16" fill="hsl(0, 12.890625%, 87.109375%)"/>
+<text font-family="IBM Plex Mono" x="232" y="155" font-size="8" text-anchor="middle" fill="black">9E</text>
+<rect x="240" y="144" width="16" height="16" fill="hsl(0, 28.125%, 71.875%)"/>
+<text font-family="IBM Plex Mono" x="248" y="155" font-size="8" text-anchor="middle" fill="black">9F</text>
+<rect x="0" y="160" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="8" y="171" font-size="8" text-anchor="middle" fill="black">A0</text>
+<rect x="16" y="160" width="16" height="16" fill="hsl(0, 21.09375%, 78.90625%)"/>
+<text font-family="IBM Plex Mono" x="24" y="171" font-size="8" text-anchor="middle" fill="black">A1</text>
+<rect x="32" y="160" width="16" height="16" fill="hsl(120, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="40" y="171" font-size="8" text-anchor="middle" fill="black">A2</text>
+<rect x="48" y="160" width="16" height="16" fill="hsl(0, 2.34375%, 97.65625%)"/>
+<text font-family="IBM Plex Mono" x="56" y="171" font-size="8" text-anchor="middle" fill="black">A3</text>
+<rect x="64" y="160" width="16" height="16" fill="hsl(0, 15.234375%, 84.765625%)"/>
+<text font-family="IBM Plex Mono" x="72" y="171" font-size="8" text-anchor="middle" fill="black">A4</text>
+<rect x="80" y="160" width="16" height="16" fill="hsl(0, 8.984375%, 91.015625%)"/>
+<text font-family="IBM Plex Mono" x="88" y="171" font-size="8" text-anchor="middle" fill="black">A5</text>
+<rect x="96" y="160" width="16" height="16" fill="hsl(0, 22.65625%, 77.34375%)"/>
+<text font-family="IBM Plex Mono" x="104" y="171" font-size="8" text-anchor="middle" fill="black">A6</text>
+<rect x="112" y="160" width="16" height="16" fill="hsl(0, 16.796875%, 83.203125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="171" font-size="8" text-anchor="middle" fill="black">A7</text>
+<rect x="128" y="160" width="16" height="16" fill="hsl(0, 17.1875%, 82.8125%)"/>
+<text font-family="IBM Plex Mono" x="136" y="171" font-size="8" text-anchor="middle" fill="black">A8</text>
+<rect x="144" y="160" width="16" height="16" fill="hsl(120, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="152" y="171" font-size="8" text-anchor="middle" fill="black">A9</text>
+<rect x="160" y="160" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="168" y="171" font-size="8" text-anchor="middle" fill="black">AA</text>
+<rect x="176" y="160" width="16" height="16" fill="hsl(0, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="184" y="171" font-size="8" text-anchor="middle" fill="black">AB</text>
+<rect x="192" y="160" width="16" height="16" fill="hsl(0, 10.9375%, 89.0625%)"/>
+<text font-family="IBM Plex Mono" x="200" y="171" font-size="8" text-anchor="middle" fill="black">AC</text>
+<rect x="208" y="160" width="16" height="16" fill="hsl(120, 20.703125%, 79.296875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="171" font-size="8" text-anchor="middle" fill="black">AD</text>
+<rect x="224" y="160" width="16" height="16" fill="hsl(120, 11.71875%, 88.28125%)"/>
+<text font-family="IBM Plex Mono" x="232" y="171" font-size="8" text-anchor="middle" fill="black">AE</text>
+<rect x="240" y="160" width="16" height="16" fill="hsl(120, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="248" y="171" font-size="8" text-anchor="middle" fill="black">AF</text>
+<rect x="0" y="176" width="16" height="16" fill="hsl(0, 3.515625%, 96.484375%)"/>
+<text font-family="IBM Plex Mono" x="8" y="187" font-size="8" text-anchor="middle" fill="black">B0</text>
+<rect x="16" y="176" width="16" height="16" fill="hsl(120, 23.046875%, 76.953125%)"/>
+<text font-family="IBM Plex Mono" x="24" y="187" font-size="8" text-anchor="middle" fill="black">B1</text>
+<rect x="32" y="176" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="40" y="187" font-size="8" text-anchor="middle" fill="black">B2</text>
+<rect x="48" y="176" width="16" height="16" fill="hsl(0, 8.984375%, 91.015625%)"/>
+<text font-family="IBM Plex Mono" x="56" y="187" font-size="8" text-anchor="middle" fill="black">B3</text>
+<rect x="64" y="176" width="16" height="16" fill="hsl(0, 2.34375%, 97.65625%)"/>
+<text font-family="IBM Plex Mono" x="72" y="187" font-size="8" text-anchor="middle" fill="black">B4</text>
+<rect x="80" y="176" width="16" height="16" fill="hsl(0, 10.9375%, 89.0625%)"/>
+<text font-family="IBM Plex Mono" x="88" y="187" font-size="8" text-anchor="middle" fill="black">B5</text>
+<rect x="96" y="176" width="16" height="16" fill="hsl(0, 10.546875%, 89.453125%)"/>
+<text font-family="IBM Plex Mono" x="104" y="187" font-size="8" text-anchor="middle" fill="black">B6</text>
+<rect x="112" y="176" width="16" height="16" fill="hsl(0, 7.8125%, 92.1875%)"/>
+<text font-family="IBM Plex Mono" x="120" y="187" font-size="8" text-anchor="middle" fill="black">B7</text>
+<rect x="128" y="176" width="16" height="16" fill="hsl(0, 6.640625%, 93.359375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="187" font-size="8" text-anchor="middle" fill="black">B8</text>
+<rect x="144" y="176" width="16" height="16" fill="hsl(120, 4.296875%, 95.703125%)"/>
+<text font-family="IBM Plex Mono" x="152" y="187" font-size="8" text-anchor="middle" fill="black">B9</text>
+<rect x="160" y="176" width="16" height="16" fill="hsl(120, 40.234375%, 59.765625%)"/>
+<text font-family="IBM Plex Mono" x="168" y="187" font-size="8" text-anchor="middle" fill="black">BA</text>
+<rect x="176" y="176" width="16" height="16" fill="hsl(120, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="187" font-size="8" text-anchor="middle" fill="black">BB</text>
+<rect x="192" y="176" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="200" y="187" font-size="8" text-anchor="middle" fill="black">BC</text>
+<rect x="208" y="176" width="16" height="16" fill="hsl(0, 17.1875%, 82.8125%)"/>
+<text font-family="IBM Plex Mono" x="216" y="187" font-size="8" text-anchor="middle" fill="black">BD</text>
+<rect x="224" y="176" width="16" height="16" fill="hsl(0, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="232" y="187" font-size="8" text-anchor="middle" fill="black">BE</text>
+<rect x="240" y="176" width="16" height="16" fill="hsl(0, 3.90625%, 96.09375%)"/>
+<text font-family="IBM Plex Mono" x="248" y="187" font-size="8" text-anchor="middle" fill="black">BF</text>
+<rect x="0" y="192" width="16" height="16" fill="hsl(120, 1.953125%, 98.046875%)"/>
+<text font-family="IBM Plex Mono" x="8" y="203" font-size="8" text-anchor="middle" fill="black">C0</text>
+<rect x="16" y="192" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="24" y="203" font-size="8" text-anchor="middle" fill="black">C1</text>
+<rect x="32" y="192" width="16" height="16" fill="hsl(0, 15.625%, 84.375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="203" font-size="8" text-anchor="middle" fill="black">C2</text>
+<rect x="48" y="192" width="16" height="16" fill="hsl(120, 12.109375%, 87.890625%)"/>
+<text font-family="IBM Plex Mono" x="56" y="203" font-size="8" text-anchor="middle" fill="black">C3</text>
+<rect x="64" y="192" width="16" height="16" fill="hsl(120, 3.90625%, 96.09375%)"/>
+<text font-family="IBM Plex Mono" x="72" y="203" font-size="8" text-anchor="middle" fill="black">C4</text>
+<rect x="80" y="192" width="16" height="16" fill="hsl(120, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="88" y="203" font-size="8" text-anchor="middle" fill="black">C5</text>
+<rect x="96" y="192" width="16" height="16" fill="hsl(120, 10.546875%, 89.453125%)"/>
+<text font-family="IBM Plex Mono" x="104" y="203" font-size="8" text-anchor="middle" fill="black">C6</text>
+<rect x="112" y="192" width="16" height="16" fill="hsl(0, 12.109375%, 87.890625%)"/>
+<text font-family="IBM Plex Mono" x="120" y="203" font-size="8" text-anchor="middle" fill="black">C7</text>
+<rect x="128" y="192" width="16" height="16" fill="hsl(120, 14.0625%, 85.9375%)"/>
+<text font-family="IBM Plex Mono" x="136" y="203" font-size="8" text-anchor="middle" fill="black">C8</text>
+<rect x="144" y="192" width="16" height="16" fill="hsl(0, 3.90625%, 96.09375%)"/>
+<text font-family="IBM Plex Mono" x="152" y="203" font-size="8" text-anchor="middle" fill="black">C9</text>
+<rect x="160" y="192" width="16" height="16" fill="hsl(0, 13.28125%, 86.71875%)"/>
+<text font-family="IBM Plex Mono" x="168" y="203" font-size="8" text-anchor="middle" fill="black">CA</text>
+<rect x="176" y="192" width="16" height="16" fill="hsl(0, 0.78125%, 99.21875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="203" font-size="8" text-anchor="middle" fill="black">CB</text>
+<rect x="192" y="192" width="16" height="16" fill="hsl(0, 17.96875%, 82.03125%)"/>
+<text font-family="IBM Plex Mono" x="200" y="203" font-size="8" text-anchor="middle" fill="black">CC</text>
+<rect x="208" y="192" width="16" height="16" fill="hsl(120, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="216" y="203" font-size="8" text-anchor="middle" fill="black">CD</text>
+<rect x="224" y="192" width="16" height="16" fill="hsl(120, 5.859375%, 94.140625%)"/>
+<text font-family="IBM Plex Mono" x="232" y="203" font-size="8" text-anchor="middle" fill="black">CE</text>
+<rect x="240" y="192" width="16" height="16" fill="hsl(0, 1.953125%, 98.046875%)"/>
+<text font-family="IBM Plex Mono" x="248" y="203" font-size="8" text-anchor="middle" fill="black">CF</text>
+<rect x="0" y="208" width="16" height="16" fill="hsl(120, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="8" y="219" font-size="8" text-anchor="middle" fill="black">D0</text>
+<rect x="16" y="208" width="16" height="16" fill="hsl(0, 13.671875%, 86.328125%)"/>
+<text font-family="IBM Plex Mono" x="24" y="219" font-size="8" text-anchor="middle" fill="black">D1</text>
+<rect x="32" y="208" width="16" height="16" fill="hsl(120, 15.234375%, 84.765625%)"/>
+<text font-family="IBM Plex Mono" x="40" y="219" font-size="8" text-anchor="middle" fill="black">D2</text>
+<rect x="48" y="208" width="16" height="16" fill="hsl(120, 3.90625%, 96.09375%)"/>
+<text font-family="IBM Plex Mono" x="56" y="219" font-size="8" text-anchor="middle" fill="black">D3</text>
+<rect x="64" y="208" width="16" height="16" fill="hsl(0, 7.03125%, 92.96875%)"/>
+<text font-family="IBM Plex Mono" x="72" y="219" font-size="8" text-anchor="middle" fill="black">D4</text>
+<rect x="80" y="208" width="16" height="16" fill="hsl(0, 2.734375%, 97.265625%)"/>
+<text font-family="IBM Plex Mono" x="88" y="219" font-size="8" text-anchor="middle" fill="black">D5</text>
+<rect x="96" y="208" width="16" height="16" fill="hsl(0, 9.765625%, 90.234375%)"/>
+<text font-family="IBM Plex Mono" x="104" y="219" font-size="8" text-anchor="middle" fill="black">D6</text>
+<rect x="112" y="208" width="16" height="16" fill="hsl(120, 14.84375%, 85.15625%)"/>
+<text font-family="IBM Plex Mono" x="120" y="219" font-size="8" text-anchor="middle" fill="black">D7</text>
+<rect x="128" y="208" width="16" height="16" fill="hsl(0, 17.578125%, 82.421875%)"/>
+<text font-family="IBM Plex Mono" x="136" y="219" font-size="8" text-anchor="middle" fill="black">D8</text>
+<rect x="144" y="208" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="152" y="219" font-size="8" text-anchor="middle" fill="black">D9</text>
+<rect x="160" y="208" width="16" height="16" fill="hsl(0, 10.15625%, 89.84375%)"/>
+<text font-family="IBM Plex Mono" x="168" y="219" font-size="8" text-anchor="middle" fill="black">DA</text>
+<rect x="176" y="208" width="16" height="16" fill="hsl(120, 12.890625%, 87.109375%)"/>
+<text font-family="IBM Plex Mono" x="184" y="219" font-size="8" text-anchor="middle" fill="black">DB</text>
+<rect x="192" y="208" width="16" height="16" fill="hsl(0, 15.625%, 84.375%)"/>
+<text font-family="IBM Plex Mono" x="200" y="219" font-size="8" text-anchor="middle" fill="black">DC</text>
+<rect x="208" y="208" width="16" height="16" fill="hsl(120, 8.203125%, 91.796875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="219" font-size="8" text-anchor="middle" fill="black">DD</text>
+<rect x="224" y="208" width="16" height="16" fill="hsl(0, 0.390625%, 99.609375%)"/>
+<text font-family="IBM Plex Mono" x="232" y="219" font-size="8" text-anchor="middle" fill="black">DE</text>
+<rect x="240" y="208" width="16" height="16" fill="hsl(120, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="248" y="219" font-size="8" text-anchor="middle" fill="black">DF</text>
+<rect x="0" y="224" width="16" height="16" fill="hsl(0, 19.140625%, 80.859375%)"/>
+<text font-family="IBM Plex Mono" x="8" y="235" font-size="8" text-anchor="middle" fill="black">E0</text>
+<rect x="16" y="224" width="16" height="16" fill="hsl(0, 19.140625%, 80.859375%)"/>
+<text font-family="IBM Plex Mono" x="24" y="235" font-size="8" text-anchor="middle" fill="black">E1</text>
+<rect x="32" y="224" width="16" height="16" fill="hsl(0, 22.65625%, 77.34375%)"/>
+<text font-family="IBM Plex Mono" x="40" y="235" font-size="8" text-anchor="middle" fill="black">E2</text>
+<rect x="48" y="224" width="16" height="16" fill="hsl(0, 19.53125%, 80.46875%)"/>
+<text font-family="IBM Plex Mono" x="56" y="235" font-size="8" text-anchor="middle" fill="black">E3</text>
+<rect x="64" y="224" width="16" height="16" fill="hsl(0, 26.171875%, 73.828125%)"/>
+<text font-family="IBM Plex Mono" x="72" y="235" font-size="8" text-anchor="middle" fill="black">E4</text>
+<rect x="80" y="224" width="16" height="16" fill="hsl(0, 6.640625%, 93.359375%)"/>
+<text font-family="IBM Plex Mono" x="88" y="235" font-size="8" text-anchor="middle" fill="black">E5</text>
+<rect x="96" y="224" width="16" height="16" fill="hsl(0, 25.78125%, 74.21875%)"/>
+<text font-family="IBM Plex Mono" x="104" y="235" font-size="8" text-anchor="middle" fill="black">E6</text>
+<rect x="112" y="224" width="16" height="16" fill="hsl(0, 19.921875%, 80.078125%)"/>
+<text font-family="IBM Plex Mono" x="120" y="235" font-size="8" text-anchor="middle" fill="black">E7</text>
+<rect x="128" y="224" width="16" height="16" fill="hsl(0, 24.21875%, 75.78125%)"/>
+<text font-family="IBM Plex Mono" x="136" y="235" font-size="8" text-anchor="middle" fill="black">E8</text>
+<rect x="144" y="224" width="16" height="16" fill="hsl(0, 20.703125%, 79.296875%)"/>
+<text font-family="IBM Plex Mono" x="152" y="235" font-size="8" text-anchor="middle" fill="black">E9</text>
+<rect x="160" y="224" width="16" height="16" fill="hsl(0, 1.171875%, 98.828125%)"/>
+<text font-family="IBM Plex Mono" x="168" y="235" font-size="8" text-anchor="middle" fill="black">EA</text>
+<rect x="176" y="224" width="16" height="16" fill="hsl(0, 52.734375%, 47.265625%)"/>
+<text font-family="IBM Plex Mono" x="184" y="235" font-size="8" text-anchor="middle" fill="#EEE">EB</text>
+<rect x="192" y="224" width="16" height="16" fill="hsl(0, 32.421875%, 67.578125%)"/>
+<text font-family="IBM Plex Mono" x="200" y="235" font-size="8" text-anchor="middle" fill="black">EC</text>
+<rect x="208" y="224" width="16" height="16" fill="hsl(0, 28.125%, 71.875%)"/>
+<text font-family="IBM Plex Mono" x="216" y="235" font-size="8" text-anchor="middle" fill="black">ED</text>
+<rect x="224" y="224" width="16" height="16" fill="hsl(0, 7.8125%, 92.1875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="235" font-size="8" text-anchor="middle" fill="black">EE</text>
+<rect x="240" y="224" width="16" height="16" fill="hsl(0, 26.953125%, 73.046875%)"/>
+<text font-family="IBM Plex Mono" x="248" y="235" font-size="8" text-anchor="middle" fill="black">EF</text>
+<rect x="0" y="240" width="16" height="16" fill="hsl(0, 3.125%, 96.875%)"/>
+<text font-family="IBM Plex Mono" x="8" y="251" font-size="8" text-anchor="middle" fill="black">F0</text>
+<rect x="16" y="240" width="16" height="16" fill="hsl(0, 5.078125%, 94.921875%)"/>
+<text font-family="IBM Plex Mono" x="24" y="251" font-size="8" text-anchor="middle" fill="black">F1</text>
+<rect x="32" y="240" width="16" height="16" fill="hsl(0, 26.953125%, 73.046875%)"/>
+<text font-family="IBM Plex Mono" x="40" y="251" font-size="8" text-anchor="middle" fill="black">F2</text>
+<rect x="48" y="240" width="16" height="16" fill="hsl(0, 17.96875%, 82.03125%)"/>
+<text font-family="IBM Plex Mono" x="56" y="251" font-size="8" text-anchor="middle" fill="black">F3</text>
+<rect x="64" y="240" width="16" height="16" fill="hsl(0, 21.484375%, 78.515625%)"/>
+<text font-family="IBM Plex Mono" x="72" y="251" font-size="8" text-anchor="middle" fill="black">F4</text>
+<rect x="80" y="240" width="16" height="16" fill="hsl(0, 41.015625%, 58.984375%)"/>
+<text font-family="IBM Plex Mono" x="88" y="251" font-size="8" text-anchor="middle" fill="black">F5</text>
+<rect x="96" y="240" width="16" height="16" fill="hsl(0, 8.59375%, 91.40625%)"/>
+<text font-family="IBM Plex Mono" x="104" y="251" font-size="8" text-anchor="middle" fill="black">F6</text>
+<rect x="112" y="240" width="16" height="16" fill="hsl(0, 6.640625%, 93.359375%)"/>
+<text font-family="IBM Plex Mono" x="120" y="251" font-size="8" text-anchor="middle" fill="black">F7</text>
+<rect x="128" y="240" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="136" y="251" font-size="8" text-anchor="middle" fill="black">F8</text>
+<rect x="144" y="240" width="16" height="16" fill="hsl(0, 34.765625%, 65.234375%)"/>
+<text font-family="IBM Plex Mono" x="152" y="251" font-size="8" text-anchor="middle" fill="black">F9</text>
+<rect x="160" y="240" width="16" height="16" fill="hsl(0, 13.671875%, 86.328125%)"/>
+<text font-family="IBM Plex Mono" x="168" y="251" font-size="8" text-anchor="middle" fill="black">FA</text>
+<rect x="176" y="240" width="16" height="16" fill="hsl(0, 51.953125%, 48.046875%)"/>
+<text font-family="IBM Plex Mono" x="184" y="251" font-size="8" text-anchor="middle" fill="#EEE">FB</text>
+<rect x="192" y="240" width="16" height="16" fill="hsl(0, 7.8125%, 92.1875%)"/>
+<text font-family="IBM Plex Mono" x="200" y="251" font-size="8" text-anchor="middle" fill="black">FC</text>
+<rect x="208" y="240" width="16" height="16" fill="hsl(0, 35.9375%, 64.0625%)"/>
+<text font-family="IBM Plex Mono" x="216" y="251" font-size="8" text-anchor="middle" fill="black">FD</text>
+<rect x="224" y="240" width="16" height="16" fill="hsl(0, 20.3125%, 79.6875%)"/>
+<text font-family="IBM Plex Mono" x="232" y="251" font-size="8" text-anchor="middle" fill="black">FE</text>
+<rect x="240" y="240" width="16" height="16" fill="hsl(120, 1.5625%, 98.4375%)"/>
+<text font-family="IBM Plex Mono" x="248" y="251" font-size="8" text-anchor="middle" fill="black">FF</text>
+<rect x="0" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="8" y="275" font-size="8" text-anchor="middle" fill="black">0_</text>
+<rect x="264" y="0" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="11" font-size="8" text-anchor="middle" fill="black">_0</text>
+<rect x="16" y="264" width="16" height="16" fill="hsl(120, 12.5%, 87.5%)"/>
+<text font-family="IBM Plex Mono" x="24" y="275" font-size="8" text-anchor="middle" fill="black">1_</text>
+<rect x="264" y="16" width="16" height="16" fill="hsl(0, 37.5%, 62.5%)"/>
+<text font-family="IBM Plex Mono" x="272" y="27" font-size="8" text-anchor="middle" fill="black">_1</text>
+<rect x="32" y="264" width="16" height="16" fill="hsl(120, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="40" y="275" font-size="8" text-anchor="middle" fill="black">2_</text>
+<rect x="264" y="32" width="16" height="16" fill="hsl(120, 25.0%, 75.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="43" font-size="8" text-anchor="middle" fill="black">_2</text>
+<rect x="48" y="264" width="16" height="16" fill="hsl(120, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="56" y="275" font-size="8" text-anchor="middle" fill="black">3_</text>
+<rect x="264" y="48" width="16" height="16" fill="hsl(120, 50.0%, 50.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="59" font-size="8" text-anchor="middle" fill="#EEE">_3</text>
+<rect x="64" y="264" width="16" height="16" fill="hsl(0, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="72" y="275" font-size="8" text-anchor="middle" fill="black">4_</text>
+<rect x="264" y="64" width="16" height="16" fill="hsl(120, 43.75%, 56.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="75" font-size="8" text-anchor="middle" fill="black">_4</text>
+<rect x="80" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="88" y="275" font-size="8" text-anchor="middle" fill="black">5_</text>
+<rect x="264" y="80" width="16" height="16" fill="hsl(120, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="91" font-size="8" text-anchor="middle" fill="black">_5</text>
+<rect x="96" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="104" y="275" font-size="8" text-anchor="middle" fill="black">6_</text>
+<rect x="264" y="96" width="16" height="16" fill="hsl(120, 25.0%, 75.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="107" font-size="8" text-anchor="middle" fill="black">_6</text>
+<rect x="112" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="120" y="275" font-size="8" text-anchor="middle" fill="black">7_</text>
+<rect x="264" y="112" width="16" height="16" fill="hsl(0, 12.5%, 87.5%)"/>
+<text font-family="IBM Plex Mono" x="272" y="123" font-size="8" text-anchor="middle" fill="black">_7</text>
+<rect x="128" y="264" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="136" y="275" font-size="8" text-anchor="middle" fill="black">8_</text>
+<rect x="264" y="128" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="139" font-size="8" text-anchor="middle" fill="black">_8</text>
+<rect x="144" y="264" width="16" height="16" fill="hsl(120, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="152" y="275" font-size="8" text-anchor="middle" fill="black">9_</text>
+<rect x="264" y="144" width="16" height="16" fill="hsl(0, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="272" y="155" font-size="8" text-anchor="middle" fill="black">_9</text>
+<rect x="160" y="264" width="16" height="16" fill="hsl(120, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="168" y="275" font-size="8" text-anchor="middle" fill="black">A_</text>
+<rect x="264" y="160" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="171" font-size="8" text-anchor="middle" fill="black">_A</text>
+<rect x="176" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="184" y="275" font-size="8" text-anchor="middle" fill="black">B_</text>
+<rect x="264" y="176" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="187" font-size="8" text-anchor="middle" fill="black">_B</text>
+<rect x="192" y="264" width="16" height="16" fill="hsl(0, 31.25%, 68.75%)"/>
+<text font-family="IBM Plex Mono" x="200" y="275" font-size="8" text-anchor="middle" fill="black">C_</text>
+<rect x="264" y="192" width="16" height="16" fill="hsl(0, 6.25%, 93.75%)"/>
+<text font-family="IBM Plex Mono" x="272" y="203" font-size="8" text-anchor="middle" fill="black">_C</text>
+<rect x="208" y="264" width="16" height="16" fill="hsl(120, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="216" y="275" font-size="8" text-anchor="middle" fill="black">D_</text>
+<rect x="264" y="208" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="272" y="219" font-size="8" text-anchor="middle" fill="black">_D</text>
+<rect x="224" y="264" width="16" height="16" fill="hsl(0, 12.5%, 87.5%)"/>
+<text font-family="IBM Plex Mono" x="232" y="275" font-size="8" text-anchor="middle" fill="black">E_</text>
+<rect x="264" y="224" width="16" height="16" fill="hsl(0, 43.75%, 56.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="235" font-size="8" text-anchor="middle" fill="black">_E</text>
+<rect x="240" y="264" width="16" height="16" fill="hsl(0, 0.0%, 100.0%)"/>
+<text font-family="IBM Plex Mono" x="248" y="275" font-size="8" text-anchor="middle" fill="black">F_</text>
+<rect x="264" y="240" width="16" height="16" fill="hsl(0, 18.75%, 81.25%)"/>
+<text font-family="IBM Plex Mono" x="272" y="251" font-size="8" text-anchor="middle" fill="black">_F</text>
+</svg>
