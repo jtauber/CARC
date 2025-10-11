@@ -65,13 +65,13 @@ with open("byte_rank_heatmap.svg", "w") as f:
         fill = "black" if l > 30 else "#CCC"
         f.write(
             f'<rect x="{z * 16}" y="264" width="16" height="16" fill="hsl(60, 75%, {l}%)"/>\n'
-            f'<text font-family="IBM Plex Mono" x="{z * 16 + 8}" y="275" font-size="8" text-anchor="middle" fill="{fill}">{z:01X}_</text>\n'
+            f'<text font-family="IBM Plex Mono" x="{z * 16 + 8}" y="275" font-size="8" text-anchor="middle" fill="{fill}">_{z:01X}</text>\n'
         )
         row_rank = row_ranks[z]
         l = (16 - row_rank) * (100 / 16)
         fill = "black" if l > 30 else "#CCC"
         f.write(
             f'<rect x="264" y="{z * 16}" width="16" height="16" fill="hsl(60, 75%, {l}%)"/>\n'
-            f'<text font-family="IBM Plex Mono" x="272" y="{z * 16 + 11}" font-size="8" text-anchor="middle" fill="{fill}">_{z:01X}</text>\n'
+            f'<text font-family="IBM Plex Mono" x="272" y="{z * 16 + 11}" font-size="8" text-anchor="middle" fill="{fill}">{z:01X}_</text>\n'
         )
     f.write("</svg>\n")

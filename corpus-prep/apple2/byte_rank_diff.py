@@ -80,7 +80,7 @@ with open("byte_rank_diff.svg", "w") as f:
         fill = "black" if (100 - abs(rank_diff) / 0.16) > 50 else "#EEE"
         f.write(
             f'<rect x="{z * 16}" y="264" width="16" height="16" fill="{color}"/>\n'
-            f'<text font-family="IBM Plex Mono" x="{z * 16 + 8}" y="275" font-size="8" text-anchor="middle" fill="{fill}">{z:01X}_</text>\n'
+            f'<text font-family="IBM Plex Mono" x="{z * 16 + 8}" y="275" font-size="8" text-anchor="middle" fill="{fill}">_{z:01X}</text>\n'
         )
         rank_diff = a_row_ranks[f"_{z:01X}"] - b_row_ranks[f"_{z:01X}"]
         if rank_diff > 0:
@@ -90,6 +90,6 @@ with open("byte_rank_diff.svg", "w") as f:
         fill = "black" if (100 - abs(rank_diff) / 0.16) > 50 else "#EEE"
         f.write(
             f'<rect x="264" y="{z * 16}" width="16" height="16" fill="{color}"/>\n'
-            f'<text font-family="IBM Plex Mono" x="272" y="{z * 16 + 11}" font-size="8" text-anchor="middle" fill="{fill}">_{z:01X}</text>\n'
+            f'<text font-family="IBM Plex Mono" x="272" y="{z * 16 + 11}" font-size="8" text-anchor="middle" fill="{fill}">{z:01X}_</text>\n'
         )
     f.write("</svg>\n")

@@ -6,7 +6,7 @@ date: 2025-10-10
 Having ranked all the byte values across 12,450 Apple II disk images, how might a specific disk differ?
 
 As an initial experiment, I ranked the byte values on the Ultima IV boot disk and generated this heatmap
-showing how much the rank on the Ultima IV book disk differs from that across the entire corpus.
+showing how much the rank on the Ultima IV boot disk differs from that across the entire corpus.
 
 Green indicates higher ranked than in the full corpus and red indicates lower ranked.
 
