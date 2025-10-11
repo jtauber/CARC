@@ -10,7 +10,7 @@ body {
   line-height: 1.5;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   color: #CCC;
   background: hsl(60, 100%, 3%);
@@ -28,8 +28,8 @@ main {
   flex: 3;
   font-size: 14pt;
   padding: 4rem 2rem;
-  min-width: 360px;
-  max-width: 900px;
+  min-width: calc(320px - 4rem);
+  max-width: calc(900px - 4rem);
 }
 
 aside {
@@ -37,8 +37,8 @@ aside {
   padding: 4rem 2rem;
   font-size: 12pt;
   color: #999;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: calc(320px - 4rem);
+  max-width: calc(500px - 4rem);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "IBM Plex Sans Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
+  line-height: 1.2;
   color: var(--primary-color);
 }
 
