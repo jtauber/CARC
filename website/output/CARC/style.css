@@ -65,19 +65,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 aside .site-description {
-  font-size: 12pt;
-  font-style: italic;
+  font-size: 16pt;
   text-wrap: balance;
   line-height: 1;
 }
+aside .site-description b {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 aside nav {
-  margin-block-start: 0.5rem;
+  margin-block-start: 2rem;
   font-size: 14pt;
 }
 
 .pagination {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  font-size: 12pt;
 }
 
 .post-list {
