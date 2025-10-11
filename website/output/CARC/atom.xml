@@ -49,17 +49,16 @@ not the frequency.&lt;/p&gt;
     <title type="html">Gathering Apple II Disk Images</title>
     <link href="https://jtauber.github.io/CARC/2025/10/09/gathering-apple-ii-disk-images/" rel="alternate" type="text/html" title="Gathering Apple II Disk Images"/>
     <published>2025-10-09</published>
-    <updated>2025-10-10T19:25:49.851407-04:00</updated>
+    <updated>2025-10-10T23:08:37.343224-04:00</updated>
     <id>https://jtauber.github.io/CARC/2025/10/09/gathering-apple-ii-disk-images/</id>
     <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/09/gathering-apple-ii-disk-images/">&lt;p&gt;I want to get a lot of 6502 machine code, BASIC source, etc. so I’ve gathered a few
 thousand Apple II disk images.&lt;/p&gt;
 &lt;p&gt;I started there as it’s what I&#39;m most familiar with.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.apple.asimov.net/site_files.txt&#34;&gt;https://www.apple.asimov.net/site_files.txt&lt;/a&gt; lists 39,663 files of which 15,187 end in &lt;code&gt;.dsk&lt;/code&gt; (case-insensitive).&lt;/p&gt;
-&lt;p&gt;Based on category gleaned from the file path, I identified 13,322 Apple II disk images to download.&lt;/p&gt;
-&lt;p&gt;Of these, 13,312 successfully downloaded and 13,252 are the expected size: 143,360 bytes.&lt;/p&gt;
-&lt;p&gt;Of those 13,252, I eliminated a further 802 as having a duplicate MD5 hash.&lt;/p&gt;
-&lt;p&gt;Of the 12,450 deduplicated disk images of the right size, 7,092 (57.0%) of them appear to be normal DOS 3.3 disks with a regular VTOC.
-That’s not to say I can’t do interesting things with the other disks, but it will be a lot more difficult.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.apple.asimov.net/site_files.txt&#34;&gt;https://www.apple.asimov.net/site_files.txt&lt;/a&gt; lists &lt;strong&gt;39,663&lt;/strong&gt; files of which &lt;strong&gt;15,187&lt;/strong&gt; end in &lt;code&gt;.dsk&lt;/code&gt; (case-insensitive).
+Based on category gleaned from the file path, I identified &lt;strong&gt;13,322&lt;/strong&gt; Apple II disk images to download.&lt;/p&gt;
+&lt;p&gt;Of these, &lt;strong&gt;13,312&lt;/strong&gt; successfully downloaded and &lt;strong&gt;13,252&lt;/strong&gt; are the expected size: 143,360 bytes.
+Of those &lt;strong&gt;13,252&lt;/strong&gt;, I eliminated a further &lt;strong&gt;802&lt;/strong&gt; as having a duplicate MD5 hash.&lt;/p&gt;
+&lt;p&gt;Of the &lt;strong&gt;12,450&lt;/strong&gt; deduplicated disk images of the right size, &lt;strong&gt;7,092&lt;/strong&gt; (&lt;strong&gt;57.0&lt;/strong&gt;%) of them appear to be normal DOS 3.3 disks with a regular VTOC. That’s not to say I can’t do interesting things with the other disks, but it will be a lot more difficult.&lt;/p&gt;
 &lt;p&gt;I won’t check-in all the disk images but the GitHub repo does contain the file lists and all the code I’ve written so far.&lt;/p&gt;</content>
     <author>
       <name>James Tauber</name>
@@ -70,11 +69,11 @@ thousand Apple II disk images.</summary>
     <title type="html">Kicking off the Project</title>
     <link href="https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/" rel="alternate" type="text/html" title="Kicking off the Project"/>
     <published>2025-10-09</published>
-    <updated>2025-10-10T18:35:48.004980-04:00</updated>
+    <updated>2025-10-10T23:06:45.456691-04:00</updated>
     <id>https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/</id>
-    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/">&lt;p&gt;Okay, I&#39;ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you&#39;re interested, star / watch the repo. I&#39;ll start some discussions there too.&lt;/p&gt;</content>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/09/kicking-off-the-project/">&lt;p&gt;Okay, I’ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you’re interested, star / watch the repo. I’ll start some discussions there too.&lt;/p&gt;</content>
     <author>
       <name>James Tauber</name>
     </author>
-    <summary type="html">Okay, I&#39;ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you&#39;re interested, star / watch the repo. I&#39;ll start some discussions there too.</summary>
+    <summary type="html">Okay, I’ve started &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/jtauber/CARC&#34;&gt;a repo&lt;/a&gt; (and even came up with a Tolkien-inspired acronym)! If you’re interested, star / watch the repo. I’ll start some discussions there too.</summary>
   </entry></feed>

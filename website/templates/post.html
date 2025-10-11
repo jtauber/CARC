@@ -3,7 +3,7 @@
 {% block page_title %}{{ frontmatter.title }}{% endblock %}
 
 {% block page_description %}
-  <meta name="description" content="{{ excerpt }}">
+  <meta name="description" content="{{ excerpt|striptags|truncate(160, True, '...') }}">
 {% endblock %}
 
 {% block content %}

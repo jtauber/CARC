@@ -90,11 +90,14 @@ aside nav {
   margin-block-end: 2rem;
 }
 .post-excerpt {
-  font-size: 13pt;
+  font-size: 14pt;
   margin-block: 1rem;
 }
 .post-content {
   margin-block: 2rem;
+}
+.post-content > p:first-of-type {
+  font-size: 18pt;
 }
 .post-metadata {
   font-size: 14pt;
