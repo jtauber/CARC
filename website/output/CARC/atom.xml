@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-10T19:25:49.851407-04:00</updated>
+  <updated>2025-10-10T20:30:37.674052-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,25 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Ranking Byte Values in the Apple II Disk Corpus</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Ranking Byte Values in the Apple II Disk Corpus"/>
+    <published>2025-10-10</published>
+    <updated>2025-10-10T20:30:37.674052-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/10/ranking-byte-values-in-the-apple-ii-disk-corpus/">&lt;p&gt;Which are the most common byte values across the 12,450 Apple II disk images?&lt;/p&gt;
+&lt;p&gt;Here is a heatmap showing the rank of each byte value. Note this is the &lt;strong&gt;rank&lt;/strong&gt;,
+not the frequency.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/CARC/figures/byte_rank_heatmap.svg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The top 16 byte values (most common to less common) are:&lt;br /&gt;
+&lt;code&gt;00 20 A0 FF 80 01 7F D0 03 8D 02 AA 30 A9 3A 22&lt;/code&gt; ...&lt;/p&gt;
+&lt;p&gt;The bottom 16 byte values (more common to least common) are:&lt;br /&gt;
+... &lt;code&gt;93 5C 7D 9C 5E DC 92 DE 9A 7B 97 DA 7A 8B 5B 9B&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It will be fascinating to see if this varies on other platforms and also by disk category (e.g. games vs others).&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">Which are the most common byte values across the 12,450 Apple II disk images?</summary>
+  </entry><entry>
     <title type="html">Gathering Apple II Disk Images</title>
     <link href="https://jtauber.github.io/CARC/2025/10/09/gathering-apple-ii-disk-images/" rel="alternate" type="text/html" title="Gathering Apple II Disk Images"/>
     <published>2025-10-09</published>

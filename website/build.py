@@ -24,6 +24,8 @@ PANTRY_DIR = ROOT_DIR / "pantry"
 ryland.copy_to_output(PANTRY_DIR / "style.css")
 ryland.add_hash("style.css")
 
+ryland.copy_to_output(ROOT_DIR / "figures")
+
 ryland.render_template("404.html", "404.html")
 
 POSTS_DIR = ROOT_DIR / "posts"

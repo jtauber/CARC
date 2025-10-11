@@ -25,6 +25,7 @@ a:hover {
 
 main {
   flex: 3;
+  font-size: 14pt;
   padding: 4rem 2rem;
   min-width: 360px;
   max-width: 900px;
@@ -33,7 +34,7 @@ main {
 aside {
   flex: 1;
   padding: 4rem 2rem;
-  font-size: 10pt;
+  font-size: 12pt;
   color: #999;
   min-width: 300px;
   max-width: 300px;
