@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-12T14:15:03.996595-04:00</updated>
+  <updated>2025-10-12T18:38:26.441083-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,28 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Where the Variations in the DOS 3.3 Boot Sector Happen</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/" rel="alternate" type="text/html" title="Where the Variations in the DOS 3.3 Boot Sector Happen"/>
+    <published>2025-10-12</published>
+    <updated>2025-10-12T18:38:26.441083-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/">&lt;p&gt;Following on from the previous post,
+I started wondering where the different DOS-3.3-style boot sector types diverge so I
+constructed the following visualization.&lt;/p&gt;
+&lt;p&gt;This is just a stacked bar chart with the x-axis representing the number of bytes into the sector
+and the bars showing the proportion of disks with identical bytes up until that point.&lt;/p&gt;
+&lt;p&gt;The brightest bars (at the bottom of the stack) represent the normal DOS 3.3 boot sector and so sudden drops indicate a larger number of disks that diverge from that point.
+The biggest drops are labeled with the offset at which they occur.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/CARC/figures/boot_sector.svg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In a normal DOS 3.3 boot sector, the code runs from &lt;code&gt;01&lt;/code&gt; to &lt;code&gt;4C&lt;/code&gt;, bytes &lt;code&gt;4D&lt;/code&gt; to &lt;code&gt;5C&lt;/code&gt; contain a table of data (mapping logical sectors to physical sectors), bytes &lt;code&gt;5D&lt;/code&gt; to &lt;code&gt;FC&lt;/code&gt; aren’t directly used by the boot process but can be used for DOS patches, and bytes &lt;code&gt;FD&lt;/code&gt; to &lt;code&gt;FF&lt;/code&gt; are some more data.&lt;/p&gt;
+&lt;p&gt;The fact a drop happens after &lt;code&gt;4A&lt;/code&gt; rather than after &lt;code&gt;4C&lt;/code&gt; suggests the final &lt;code&gt;JMP&lt;/code&gt; has been changed. I’ll explore the variations in more detail in future posts.&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">Following on from the previous post,
+I started wondering where the different DOS-3.3-style boot sector types diverge so I
+constructed the following visualization.</summary>
+  </entry><entry>
     <title type="html">Boot Sector Types in the Apple II Disk Corpus</title>
     <link href="https://jtauber.github.io/CARC/2025/10/12/boot-sector-types-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Boot Sector Types in the Apple II Disk Corpus"/>
     <published>2025-10-12</published>
