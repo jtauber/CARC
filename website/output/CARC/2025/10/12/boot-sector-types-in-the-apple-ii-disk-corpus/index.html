@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boot Sector Types in the Apple II Disk Corpus | CARC</title>
+    
+  <meta name="description" content="We previously looked at all sectors across the Apple II Disk Corpus but what about variation in the boot sector? In other words, track 0 sector 0.">
+
+    <link rel="stylesheet" href="/CARC/style.css?fe30aa410f9ef14b98113053db0bd263">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body class="post">
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in <cite>The Hobbit</cite>.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <article class="post">
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/11/why-so-many-sectors-start-with-00-11-0x-00/">Why So Many Sectors Start with 00 11 0X 00</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+
+    <h1>Boot Sector Types in the Apple II Disk Corpus</h1>
+    <div class="post-metadata">
+  <span class="post-date">October 12, 2025</span>
+  
+    <span class="post-author">by James Tauber</span>
+  
+</div>
+
+    <div class="post-content">
+      <p>We previously looked at all sectors across the Apple II Disk Corpus but
+what about variation in the <em>boot</em> sector? In other words, track 0 sector 0.</p>
+<p>In this case, there are <strong>1,680</strong> sector types and the top 20 are listed below.
+Even though the most common starts with <code>01 38 B0 03 4C</code>,
+more start with <code>01 A5 26 C9 09</code> (there is just more variation later on).</p>
+<p>The vast majority (<strong>11,802</strong> disks) start with <code>01</code> because
+this is telling the <code>BOOT0</code> code on the disk drive ROM how many sectors the <code>BOOT1</code> code takes up.
+The single sector <code>BOOT1</code> code is then used to load the rest of DOS.</p>
+<p>Of those, <strong>7,505</strong> continue with <code>A5</code> and <strong>2,661</strong> continue with <code>38</code>. In fact <strong>7,476</strong> continue with <code>A5 27 C9 09</code> and <strong>2,653</strong> with <code>38 B0 03 4C</code>.</p>
+<p>The <code>A5 27 C9 09</code> sequence is the beginning of the boot loader for <strong>DOS 3.3</strong> and the <code>38 B0 03 4C</code> sequence is the beginning of the boot loader for <strong>ProDOS</strong>. I suspect some of the variation after that point is changes made for copy protection purposes but that will be a whole other avenue to explore.</p>
+<p>Also presumably not all the disks are bootable because they are data disks in multi-volume collections. One of my plans is to tag all the disks with various features, in part so that correlations can be studied.</p>
+<pre class="codehilite"><code>disks  first 16 bytes
+--------------------------------------------------------------------
+ 2391  01 38 B0 03 4C 32 A1 86 43 C9 03 08 8A 29 70 4A ...
+ 1942  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+ 1403  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  723  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  572  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  249  01 E0 60 F0 03 4C E3 08 AD 00 08 C9 04 B0 0A 69 ...
+  194  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  192  01 38 B0 03 4C 1C 09 78 86 43 C9 03 08 8A 29 70 ...
+  156  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  137  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+  132  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ...
+   93  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+   83  01 A5 27 C9 09 D0 10 A5 2B 4A 4A 4A 4A 09 C0 8D ...
+   69  01 E0 70 B0 04 E0 40 B0 39 BD 88 C0 20 20 08 A2 ...
+   67  01 A6 2B BD 88 C0 8A 4A 4A 4A 4A 09 C0 85 11 A9 ...
+   63  01 A5 27 C9 09 D0 21 8D 50 C0 8D 57 C0 8D 52 C0 ...
+   62  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+   61  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+   59  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+   46  01 A5 27 C9 09 D0 18 A5 2B 4A 4A 4A 4A 09 C0 85 ...
+</code></pre>
+    </div>
+
+    
+
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/11/why-so-many-sectors-start-with-00-11-0x-00/">Why So Many Sectors Start with 00 11 0X 00</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+  </article>
+
+    </main>
+  </body>
+</html>
