@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ calc_url('style.css') }}">
     <link rel="alternate" type="application/atom+xml" href="{{ site.host }}{{ calc_url(site.feed_url) }}">
   </head>
-  <body>
+  <body class="{% block body_class %}base{% endblock %}">
     <aside>
       {% include "_sidebar.html" %}
     </aside>

@@ -16,25 +16,28 @@ body {
   background: hsl(60, 100%, 3%);
 }
 
-a {
-  text-decoration: none;
-  color: var(--primary-color);
-}
-a:hover {
-  color: white;
+@media (width < 640px) {
+  body.post {
+    aside {
+      order: 2;
+    }
+    main {
+      order: 1;
+    }
+  }
 }
 
 main {
   flex: 3;
   font-size: 14pt;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
   min-width: calc(320px - 4rem);
   max-width: calc(900px - 4rem);
 }
 
 aside {
   flex: 1;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
   font-size: 12pt;
   color: #999;
   min-width: calc(320px - 4rem);
@@ -48,6 +51,14 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   line-height: 1.2;
   color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
+  color: white;
 }
 
 .tags > a {

@@ -3,8 +3,10 @@
 {% block page_title %}{{ frontmatter.title }}{% endblock %}
 
 {% block page_description %}
-  <meta name="description" content="{{ excerpt|striptags|truncate(250, True, '...') }}">
+  <meta name="description" content="{{ excerpt|striptags|truncate(160, True, '...') }}">
 {% endblock %}
+
+{% block body_class %}post{% endblock %}
 
 {% block content %}
   <article class="post">
