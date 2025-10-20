@@ -190,7 +190,7 @@ Now let’s look at the loop that loads the sectors.
 `$08FF` contains the sector to read so we firstly load that into register `X`.
 
 ```
-081f: AE FF 08      LDX $08FF
+081F: AE FF 08      LDX $08FF
 ```
 
 Then we check if we’ve gone below zero and, if so, branch out of the loop.
@@ -277,7 +277,7 @@ We first of all increment this to bring it back.
 We then increment it again because we actually want to execute the _next_ part of the code:
 
 ```
-083c: EE FE 08      INC $08FE
+083C: EE FE 08      INC $08FE
 ```
 
 Now `$08FD`/`$08FE` should contain the address where sector 1 (the continuation of the boot process) lives.
@@ -285,7 +285,7 @@ Now `$08FD`/`$08FE` should contain the address where sector 1 (the continuation 
 We make a series of calls to the Monitor ROM to make sure things are initialized there:
 
 ```
-083f: 20 89 FE      JSR MON_SETKBD
+083F: 20 89 FE      JSR MON_SETKBD
 0842: 20 93 FE      JSR MON_SETVID
 0845: 20 2F FB      JSR MON_INIT
 ```

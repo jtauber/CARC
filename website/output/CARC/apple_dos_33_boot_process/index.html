@@ -185,7 +185,7 @@ need to run the code again, but having it at <code>$B600</code> means it’s ava
 <h2>Reading in Each Sector with <code>BOOT1</code></h2>
 <p>Now let’s look at the loop that loads the sectors.</p>
 <p><code>$08FF</code> contains the sector to read so we firstly load that into register <code>X</code>.</p>
-<pre class="codehilite"><code>081f: AE FF 08      LDX $08FF
+<pre class="codehilite"><code>081F: AE FF 08      LDX $08FF
 </code></pre>
 
 <p>Then we check if we’ve gone below zero and, if so, branch out of the loop.</p>
@@ -244,12 +244,12 @@ We first of all increment this to bring it back.</p>
 </code></pre>
 
 <p>We then increment it again because we actually want to execute the <em>next</em> part of the code:</p>
-<pre class="codehilite"><code>083c: EE FE 08      INC $08FE
+<pre class="codehilite"><code>083C: EE FE 08      INC $08FE
 </code></pre>
 
 <p>Now <code>$08FD</code>/<code>$08FE</code> should contain the address where sector 1 (the continuation of the boot process) lives.</p>
 <p>We make a series of calls to the Monitor ROM to make sure things are initialized there:</p>
-<pre class="codehilite"><code>083f: 20 89 FE      JSR MON_SETKBD
+<pre class="codehilite"><code>083F: 20 89 FE      JSR MON_SETKBD
 0842: 20 93 FE      JSR MON_SETVID
 0845: 20 2F FB      JSR MON_INIT
 </code></pre>
