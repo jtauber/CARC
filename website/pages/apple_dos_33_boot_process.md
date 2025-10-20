@@ -30,7 +30,7 @@ contains an `RTS`.
 Cs21: 20 58 FF      JSR MON_RTS
 ```
 
-This puts (one less than) the return address (i.e. `$Cs23`) on the stack,
+This puts (one less than) the return address (i.e. `$Cs23`) on the stack and
 does the jump. At this point the stack will look like:
 
 ```
