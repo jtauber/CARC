@@ -53,6 +53,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color);
 }
 
+main h2 {
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
+}
+
 a {
   text-decoration: none;
   color: var(--primary-color);

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apple DOS 3.3 Boot Process | CARC</title>
+    
+    
+      <meta name="description" content="Corpus Analysis of Retro Code">
+    
+    
+    <link rel="stylesheet" href="/CARC/style.css?e40ec675ff1aa534a16849529fa1d434">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body class="base">
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in <cite>The Hobbit</cite>.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <h1>Apple DOS 3.3 Boot Process</h1>
+
+  <p>I’m going to sketch out the Apple DOS 3.3 boot process here.
+These are work-in-progress notes.</p>
+<p><code>BOOT0</code> the code on the ROM chip on the disk drive controller card.<br />
+<code>BOOT1</code> the code on the boot sector of the floppy.</p>
+<h2>Calculating <code>SLOT16</code></h2>
+<p><code>BOOT1</code> assumes that zero-page <code>$2B</code> (which we’ll call <code>SLOT16</code>) contains the
+slot number of the disk drive controller card times 16. How does that get there?
+Well, there’s some interesting code in <code>BOOT0</code> that sets it.</p>
+<p>The way I/O is mapped on the Apple II, the 256-byte ROM on a card in slot <code>s</code> is
+addressable as <code>$Cs00</code>. So a disk drive controller in slot 6 (the default) has its
+ROM mapped to <code>$C600</code>-<code>$C6FF</code>.</p>
+<p>That means that if code on that ROM knew its own address, it could work out what
+slot the card is in. How does code work out its own address? Well, it can can rely
+on the fact that if you jump to a subroutine, the address to return to
+(technically one byte before) is put on the stack. </p>
+<p>So what <code>BOOT0</code> does is a <code>JSR</code> to a location in the Monitor ROM that just
+contains an <code>RTS</code>.</p>
+<pre class="codehilite"><code>Cs21: 20 58 FF      JSR MON_RTS
+</code></pre>
+
+<p>This puts (one less than) the return address (i.e. <code>$Cs23</code>) on the stack,
+does the jump. At this point the stack will look like:</p>
+<pre class="codehilite"><code>0100                    STACK
+...
+01FD               &lt;--- STACK + S
+01FE            23
+01FF            Cs
+</code></pre>
+
+<p>where <code>STACK</code> is the start of the stack and <code>S</code> is the stack register that
+points to the next spot to push something to.</p>
+<p>After the jump, we immediately return (pulling one less than the return address
+off the stack) and the stack memory looks like:</p>
+<pre class="codehilite"><code>0100                    STACK
+...
+01FE            23
+01FF            Cs &lt;--- STACK + S
+</code></pre>
+
+<p>Note that <code>$Cs23</code> is still in stack memory
+(although it will be overwritten the next time something is pushed onto the stack).</p>
+<p>We want the value at <code>STACK + S</code> so we transfer the <code>S</code> register to the <code>X</code> register:</p>
+<pre class="codehilite"><code>Cs24: BA            TSX
+</code></pre>
+
+<p>We then load into <code>A</code> the value the stack pointer is pointing at:</p>
+<pre class="codehilite"><code>Cs25: BD 00 01      LDA STACK,X
+</code></pre>
+
+<p>Now <code>A</code> contains <code>Cs</code>.</p>
+<p>We just need to shift that left four times with <code>ASL</code> and that gives us <code>s * 16</code>.</p>
+<pre class="codehilite"><code>Cs28: 0A            ASL
+Cs29: 0A            ASL
+Cs2A: 0A            ASL
+Cs2B: 0A            ASL
+</code></pre>
+
+<p>We then store that in zero-page address <code>$2B</code> (<code>SLOT16</code>).</p>
+<pre class="codehilite"><code>Cs2C: 85 2B         STA SLOT16
+</code></pre>
+
+<h2>Setting up the Sector Read Call</h2>
+<p>Back over in <code>BOOT1</code> we want to establish the address of the routine to read a sector.
+We’re ultimately going to put it in <code>$3E/$3F</code>.</p>
+<p>This routine lives at <code>$Cs5C</code> but we need to know <code>s</code> (the slot) to calculate that address.</p>
+<p>So we load <code>SLOT16</code> from the zero-page address it has been put in:</p>
+<pre class="codehilite"><code>0807: A5 2B         LDA SLOT16
+</code></pre>
+
+<p>Then we shift right four times to <em>divide</em> by 16:</p>
+<pre class="codehilite"><code>0809: 4A            LSR
+080A: 4A            LSR
+080B: 4A            LSR
+080C: 4A            LSR
+</code></pre>
+
+<p>Now <code>A</code> contains the slot number <code>s</code> of the disk driver controller.</p>
+<p>We logically OR this with <code>#$C0</code> to get <code>#$Cs</code>:</p>
+<pre class="codehilite"><code>080D: 09 C0         ORA #$C0
+</code></pre>
+
+<p>and store it in <code>$3F</code>.</p>
+<pre class="codehilite"><code>080F: 85 3F         STA $3F
+</code></pre>
+
+<p>We then load <code>A</code> with <code>#$5C</code></p>
+<pre class="codehilite"><code>0811: A9 5C         LDA #$5C
+</code></pre>
+
+<p>and store it in <code>$3E</code></p>
+<pre class="codehilite"><code>0813: 85 3E         STA $3E
+</code></pre>
+
+<p>Now <code>$3E/$3F</code> contains <code>$Cs5C</code> (e.g. <code>$C65C</code> if the card is in slot 6).</p>
+<h2>Setting up the Read Buffer Address and Number of Sectors to Read</h2>
+<p>The very end of the <code>BOOT1</code> boot sector contains three bytes of data:</p>
+<pre class="codehilite"><code>08FD: 00
+08FE: B6
+08FF: 09
+</code></pre>
+
+<p><code>$08FD/$08FE</code> contains the start address that the sectors are be loaded into (i.e. <code>$B600</code>).</p>
+<p><code>$08FF</code> contains highest sector number to read. As we start on sector 0, the highest number being 9 means 10 sectors in total.</p>
+<p>The first sector (sector 0, the one we’re already on) will be loaded into <code>$B600</code>-<code>$B6FF</code>, the second into <code>$B700</code>-<code>$B7FF</code>, and so on up to <code>$BF00</code>-<code>$BFFF</code>.</p>
+<p>The code that prepares for that read using this data is as follows.</p>
+<p>Firstly, because we’re going to add-with-carry (<code>ADC</code>) we want to make sure the carry flag <code>C</code> is cleared:</p>
+<pre class="codehilite"><code>0815: 18            CLC
+</code></pre>
+
+<p>Then we load the high byte of the read buffer address.</p>
+<pre class="codehilite"><code>0816: AD FE 08      LDA $08FE
+</code></pre>
+
+<p>and add the number of sectors to read (<code>#$09</code>).</p>
+<pre class="codehilite"><code>0819: 6D FF 08      ADC $08FF
+</code></pre>
+
+<p>We then put the calculated value (now <code>#$BF</code>) back into <code>$08FE</code>.</p>
+<pre class="codehilite"><code>081C: 8D FE 08      STA $08FE
+</code></pre>
+
+<p>So now <code>$08FD</code>/<code>$08FE</code> contains <code>$BF00</code>. This is because we’re going to read the sectors last first. We’ll load sector 9 into <code>$BF00</code>-<code>$BFFF</code> first, then sector 8 into <code>$BE00</code>-<code>$BEFF</code>, and so on down to loading sector 0 into <code>$B600</code>-<code>$B6FF</code>.</p>
+<p>Why do we bother loading sector 0 at <code>$B600</code> if we’ve already loaded it at <code>$0800</code> and are executing it now? We won’t
+need to run the code again, but having it at <code>$B600</code> means it’s available later use in the initialization of new bootable disks.</p>
+<h2>Reading in Each Sector with <code>BOOT1</code></h2>
+<p>Now let’s look at the loop that loads the sectors.</p>
+<p><code>$08FF</code> contains the sector to read so we firstly load that into register <code>X</code>.</p>
+<pre class="codehilite"><code>081f: AE FF 08      LDX $08FF
+</code></pre>
+
+<p>Then we check if we’ve gone below zero and, if so, branch out of the loop.</p>
+<pre class="codehilite"><code>0822: 30 15         BMI $0839
+</code></pre>
+
+<p>Now the logical sector is not actually the raw sector number used on disk because of the interleaving that is done.
+We need to map the logical sector number to the raw sector to actually pass to the Sector Read Routine.</p>
+<p>This mapping is done at <code>$084D</code>:</p>
+<pre class="codehilite"><code>084D: 00 0D 0B 09 07 05 03 01 0E 0C 0A 08 06 04 02 0F
+</code></pre>
+
+<p>In other words, the raw sector number for logical sector <code>#$09</code> is <code>#$0C</code> which is found at <code>$084D</code> + <code>$09</code>.</p>
+<p>And so we use this table to load the raw sector number into <code>A</code>:</p>
+<pre class="codehilite"><code>0824: BD 4D 08      LDA $084D,X
+</code></pre>
+
+<p>and store it in <code>$3D</code>, the zero-page address used by the routine in <code>BOOT0</code>.</p>
+<pre class="codehilite"><code>0827: 85 3D         STA $3D
+</code></pre>
+
+<p>We then decrement <code>$08FF</code> (the next sector to read):</p>
+<pre class="codehilite"><code>0829: CE FF 08      DEC $08FF
+</code></pre>
+
+<p>Next up is to set the zero-page address for where the routine is to load the sector into. This is <code>$26</code>/<code>$27</code>.
+The low-byte is always <code>#$00</code> so doesn’t need to be set but the high-byte should be whatever is in <code>$08FE</code> and so we
+load <code>$08FE</code> into `A:</p>
+<pre class="codehilite"><code>082C: AD FE 08      LDA $08FE
+</code></pre>
+
+<p>and store it in <code>$27</code>:</p>
+<pre class="codehilite"><code>082F: 85 27         STA $27
+</code></pre>
+
+<p>Then we can decrement the high-byte of that address for the next iteration:</p>
+<pre class="codehilite"><code>0831: CE FE 08      DEC $08FE
+</code></pre>
+
+<p>Finally we load <code>X</code> with <code>SLOT16</code> (<code>$2B</code>):</p>
+<pre class="codehilite"><code>0834: A6 2B         LDX $2B
+</code></pre>
+
+<p>and indirectly call the sector read routine whose address we have stored in <code>$3E</code>/<code>$3F</code>:</p>
+<pre class="codehilite"><code>0836: 6C 3E         JMP ($3E)
+</code></pre>
+
+<p>Notice this is a <code>JMP</code> not <code>JSR</code>. How does the code return? Well, we’ll see in more detail when we dive into that
+part of the <code>BOOT0</code> code but basically when the sector is loaded, that routine jumps to <code>$0801</code> which is the start
+of the <code>BOOT1</code> code and we’ll cover that in a moment, once we’ve looked at what happens at the end of the <code>BOOT1</code> process.</p>
+<h2>Finishing Up <code>BOOT1</code></h2>
+<p>Once the sector number has been decremented below zero, we branch out of the loop.
+At this point the high-byte of our read buffer address has been decremented below the start value (<code>$B6</code> normally) too.
+We first of all increment this to bring it back.</p>
+<pre class="codehilite"><code>0839: EE FE 08      INC $08FE
+</code></pre>
+
+<p>We then increment it again because we actually want to execute the <em>next</em> part of the code:</p>
+<pre class="codehilite"><code>083c: EE FE 08      INC $08FE
+</code></pre>
+
+<p>Now <code>$08FD</code>/<code>$08FE</code> should contain the address where sector 1 (the continuation of the boot process) lives.</p>
+<p>We make a series of calls to the Monitor ROM to make sure things are initialized there:</p>
+<pre class="codehilite"><code>083f: 20 89 FE      JSR MON_SETKBD
+0842: 20 93 FE      JSR MON_SETVID
+0845: 20 2F FB      JSR MON_INIT
+</code></pre>
+
+<p>We put <code>SLOT16</code> into the <code>X</code> register.</p>
+<pre class="codehilite"><code>0848: A6 2B         LDX $2B
+</code></pre>
+
+<p>And finally jump to the address in <code>$08FD</code> (which will be <code>$B700</code> normally):</p>
+<pre class="codehilite"><code>084A: 6C FD 08      JMP ($08FD)
+</code></pre>
+
+<h2>The Start of <code>BOOT1</code></h2>
+<p>The only part we haven’t covered is the initial code at <code>$0801</code> that is both run initially and after each sector read.</p>
+<p>If it’s our first time, we need to set up the sector read call, the read buffer address, and the number of sectors to read.
+Otherwise we just proceed to read the next sector. How can we tell?</p>
+<p>We rely on the fact that, immediately after <code>BOOT0</code> has loaded the boot sector into <code>$0800</code>, <code>$26</code>/<code>$27</code> will contain the next page: <code>#$0900</code>. In other words, <code>$27</code> will contain <code>#$09</code>. But once we’ve loading DOS into <code>$B600</code>-<code>$BFFF</code>, <code>$27</code> will no longer contain <code>#$09</code>.</p>
+<p>So we firstly load <code>$27</code> into `A:</p>
+<pre class="codehilite"><code>0801: A5 27         LDA $27
+</code></pre>
+
+<p>and then compare it to <code>#$09</code>.</p>
+<pre class="codehilite"><code>0803: C9 09         CMP #$09
+</code></pre>
+
+<p>If it’s not equal, we’ve already loaded stuff before and can jump right to reading the next sector (otherwise we continue on to the setup).</p>
+<pre class="codehilite"><code>0805: D0 18         BNE $081F
+</code></pre>
+
+    </main>
+  </body>
+</html>

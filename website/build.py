@@ -29,7 +29,7 @@ ryland.copy_to_output(ROOT_DIR / "figures")
 ryland.render_template("404.html", "404.html")
 
 POSTS_DIR = ROOT_DIR / "posts"
-# PAGES_DIR = ROOT_DIR / "pages"
+PAGES_DIR = ROOT_DIR / "pages"
 
 
 tags = {}
@@ -74,13 +74,14 @@ def calc_url():
     return inner
 
 
-# for page_file in PAGES_DIR.glob("*.md"):
-#     ryland.render(
-#         load(page_file),
-#         markdown(frontmatter=True),
-#         {"url": get_context("frontmatter.url", f"/{page_file.stem}/")},
-#         {"template_name": get_context("frontmatter.template_name", "page.html")},
-#     )
+for page_file in PAGES_DIR.glob("*.md"):
+    ryland.render(
+        load(page_file),
+        markdown(frontmatter=True),
+        {"url": get_context("frontmatter.url", f"/{page_file.stem}/")},
+        {"template_name": get_context("frontmatter.template_name", "page.html")},
+    )
+
 
 posts = sorted(
     [
