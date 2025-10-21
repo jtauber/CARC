@@ -163,3 +163,11 @@ pre {
   background: var(--dimmed-color);
   color: black;
 }
+
+table.table {
+  border-collapse: collapse;
+}
+table.table td {
+  border: 1px solid var(--dimmed-color);
+  padding: 0.3rem 0.8rem;
+}

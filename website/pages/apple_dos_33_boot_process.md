@@ -178,7 +178,7 @@ We then put the calculated value (now `#$BF`) back into `$08FE`.
 081C: 8D FE 08      STA $08FE
 ```
 
-So now `$08FD`/`$08FE` contains `$BF00`. This is because we’re going to read the sectors last first. We’ll load sector 9 into `$BF00`-`$BFFF` first, then sector 8 into `$BE00`-`$BEFF`, and so on down to loading sector 0 into `$B600`-`$B6FF`.
+So now `$08FD`/`$08FE` contains `$BF00`. This is because we’re going to read the sectors last to first. We’ll load sector 9 into `$BF00`-`$BFFF` first, then sector 8 into `$BE00`-`$BEFF`, and so on down to loading sector 0 into `$B600`-`$B6FF`.
 
 Why do we bother loading sector 0 at `$B600` if we’ve already loaded it at `$0800` and are executing it now? We won’t
 need to run the code again, but having it at `$B600` means it’s available later use in the initialization of new bootable disks.

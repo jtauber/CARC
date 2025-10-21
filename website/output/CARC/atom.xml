@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-12T18:38:26.441083-04:00</updated>
+  <updated>2025-10-20T22:39:22.918055-04:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,59 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">What is in the CATALOG of each disk</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/" rel="alternate" type="text/html" title="What is in the CATALOG of each disk"/>
+    <published>2025-10-20</published>
+    <updated>2025-10-20T22:39:22.918055-04:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/">&lt;p&gt;I decided to extract the file metadata from disks with a standard layout.&lt;/p&gt;
+&lt;p&gt;As mentioned in an earlier post: of the &lt;strong&gt;12,450&lt;/strong&gt; disks in the initial Apple II Disk Corpus,
+&lt;strong&gt;7,092&lt;/strong&gt; appear to have a regular DOS 3.3 VTOC (based on the values at offsets &lt;code&gt;$03&lt;/code&gt;, &lt;code&gt;$27&lt;/code&gt;, &lt;code&gt;$34&lt;/code&gt;, &lt;code&gt;$35&lt;/code&gt;, &lt;code&gt;$36&lt;/code&gt;, &lt;code&gt;$37&lt;/code&gt;).
+Of those, &lt;strong&gt;6,998&lt;/strong&gt; have a CATALOG starting on Track &lt;code&gt;$11&lt;/code&gt; Sector &lt;code&gt;$0F&lt;/code&gt; and that’s what I decided to explore for this post.&lt;/p&gt;
+&lt;p&gt;There are a total of &lt;strong&gt;150,558&lt;/strong&gt; files.&lt;/p&gt;
+&lt;p&gt;The most common file types are:&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$04&lt;/code&gt;&lt;/td&gt;&lt;td&gt;BINARY&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;82,357&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$02&lt;/code&gt;&lt;/td&gt;&lt;td&gt;APPLESOFT BASIC&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;35,117&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$00&lt;/code&gt;&lt;/td&gt;&lt;td&gt;TEXT&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;26,931&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$01&lt;/code&gt;&lt;/td&gt;&lt;td&gt;INTEGER BASIC&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;3,138&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$08&lt;/code&gt;&lt;/td&gt;&lt;td&gt;S type&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;989&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$40&lt;/code&gt;&lt;/td&gt;&lt;td&gt;B type&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;866&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$10&lt;/code&gt;&lt;/td&gt;&lt;td&gt;RELOCATABLE&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;303&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;$20&lt;/code&gt;&lt;/td&gt;&lt;td&gt;A type&lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;172&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The most common file names are:&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HELLO&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;4,414&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MENU&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;785&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(7 x &lt;code&gt;$08&lt;/code&gt;)                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;610&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT0&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;559&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(empty)                                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;527&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT1&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;486&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;RWTS&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;485&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;AUTOTRACE&lt;/code&gt;                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;470&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;ADVANCED DEMUFFIN 1.5&lt;/code&gt;         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;442&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;ADVANCED DEMUFFIN 1.5 DOCS&lt;/code&gt;    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;441&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PDP&lt;/code&gt;                           &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;399&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;SUPER DEMUFFIN&lt;/code&gt;                &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;397&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;LOGO&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;385&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PDP.README&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;275&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;APPLESOFT&lt;/code&gt;                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;271&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;TITLE&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;242&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(6 x &lt;code&gt;$08&lt;/code&gt;)                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;231&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;CHAIN&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;195&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;INTBASIC&lt;/code&gt;                      &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;191&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;RUNTIME&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;157&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;There is undoubtedly a &lt;em&gt;lot&lt;/em&gt; of file-level deduping to do and this also demonstrates the issue of cracked disks being common in the corpus.
+The &lt;code&gt;DEMUFFIN&lt;/code&gt; files are, I assume, left-overs from the cracking process (in this case by the cracker “4am”). The &lt;code&gt;PDP&lt;/code&gt; files might be that too.&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">I decided to extract the file metadata from disks with a standard layout.</summary>
+  </entry><entry>
     <title type="html">Where the Variations in the DOS 3.3 Boot Sector Happen</title>
     <link href="https://jtauber.github.io/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/" rel="alternate" type="text/html" title="Where the Variations in the DOS 3.3 Boot Sector Happen"/>
     <published>2025-10-12</published>

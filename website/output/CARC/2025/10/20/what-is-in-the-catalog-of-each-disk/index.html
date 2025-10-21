@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What is in the CATALOG of each disk | CARC</title>
+    
+  <meta name="description" content="I decided to extract the file metadata from disks with a standard layout.">
+
+    <link rel="stylesheet" href="/CARC/style.css?b94be8cf98a421a672a2ba2515d8d91b">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body class="post">
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in <cite>The Hobbit</cite>.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <article class="post">
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/">Where the Variations in the DOS 3.3 Boot Sector Happen</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+
+    <h1>What is in the CATALOG of each disk</h1>
+    <div class="post-metadata">
+  <span class="post-date">October 20, 2025</span>
+  
+    <span class="post-author">by James Tauber</span>
+  
+</div>
+
+    <div class="post-content">
+      <p>I decided to extract the file metadata from disks with a standard layout.</p>
+<p>As mentioned in an earlier post: of the <strong>12,450</strong> disks in the initial Apple II Disk Corpus,
+<strong>7,092</strong> appear to have a regular DOS 3.3 VTOC (based on the values at offsets <code>$03</code>, <code>$27</code>, <code>$34</code>, <code>$35</code>, <code>$36</code>, <code>$37</code>).
+Of those, <strong>6,998</strong> have a CATALOG starting on Track <code>$11</code> Sector <code>$0F</code> and that’s what I decided to explore for this post.</p>
+<p>There are a total of <strong>150,558</strong> files.</p>
+<p>The most common file types are:</p>
+<table class="table">
+  <tr><td><code>$04</code></td><td>BINARY</td><td style="text-align: right;">82,357</td></tr>
+  <tr><td><code>$02</code></td><td>APPLESOFT BASIC</td><td style="text-align: right;">35,117</td></tr>
+  <tr><td><code>$00</code></td><td>TEXT</td><td style="text-align: right;">26,931</td></tr>
+  <tr><td><code>$01</code></td><td>INTEGER BASIC</td><td style="text-align: right;">3,138</td></tr>
+  <tr><td><code>$08</code></td><td>S type</td><td style="text-align: right;">989</td></tr>
+  <tr><td><code>$40</code></td><td>B type</td><td style="text-align: right;">866</td></tr>
+  <tr><td><code>$10</code></td><td>RELOCATABLE</td><td style="text-align: right;">303</td></tr>
+  <tr><td><code>$20</code></td><td>A type</td><td style="text-align: right;">172</td></tr>
+</table>
+
+<p>The most common file names are:</p>
+<table class="table">
+  <tr><td><code>HELLO</code>                         </td><td style="text-align: right;">4,414</td></tr>
+  <tr><td><code>MENU</code>                          </td><td style="text-align: right;">785</td></tr>
+  <tr><td>(7 x <code>$08</code>)                     </td><td style="text-align: right;">610</td></tr>
+  <tr><td><code>BOOT0</code>                         </td><td style="text-align: right;">559</td></tr>
+  <tr><td>(empty)                                    </td><td style="text-align: right;">527</td></tr>
+  <tr><td><code>BOOT1</code>                         </td><td style="text-align: right;">486</td></tr>
+  <tr><td><code>RWTS</code>                          </td><td style="text-align: right;">485</td></tr>
+  <tr><td><code>AUTOTRACE</code>                     </td><td style="text-align: right;">470</td></tr>
+  <tr><td><code>ADVANCED DEMUFFIN 1.5</code>         </td><td style="text-align: right;">442</td></tr>
+  <tr><td><code>ADVANCED DEMUFFIN 1.5 DOCS</code>    </td><td style="text-align: right;">441</td></tr>
+  <tr><td><code>PDP</code>                           </td><td style="text-align: right;">399</td></tr>
+  <tr><td><code>SUPER DEMUFFIN</code>                </td><td style="text-align: right;">397</td></tr>
+  <tr><td><code>LOGO</code>                          </td><td style="text-align: right;">385</td></tr>
+  <tr><td><code>PDP.README</code>                    </td><td style="text-align: right;">275</td></tr>
+  <tr><td><code>APPLESOFT</code>                     </td><td style="text-align: right;">271</td></tr>
+  <tr><td><code>TITLE</code>                         </td><td style="text-align: right;">242</td></tr>
+  <tr><td>(6 x <code>$08</code>)                     </td><td style="text-align: right;">231</td></tr>
+  <tr><td><code>CHAIN</code>                         </td><td style="text-align: right;">195</td></tr>
+  <tr><td><code>INTBASIC</code>                      </td><td style="text-align: right;">191</td></tr>
+  <tr><td><code>RUNTIME</code>                       </td><td style="text-align: right;">157</td></tr>
+</table>
+
+<p>There is undoubtedly a <em>lot</em> of file-level deduping to do and this also demonstrates the issue of cracked disks being common in the corpus.
+The <code>DEMUFFIN</code> files are, I assume, left-overs from the cracking process (in this case by the cracker “4am”). The <code>PDP</code> files might be that too.</p>
+    </div>
+
+    
+
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/12/where-the-variations-in-the-dos-3.3-boot-sector-happen/">Where the Variations in the DOS 3.3 Boot Sector Happen</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+  </article>
+
+    </main>
+  </body>
+</html>
