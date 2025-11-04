@@ -3,7 +3,7 @@
 import re
 
 
-def get_paths():
+def get_paths(all_extensions=False):
     count = 0
     for line in open("site_files.txt").readlines():
         if re.match(r"\./", line):
@@ -34,9 +34,11 @@ def get_paths():
                     if re.search(r"\.(dsk|DSK)$", line):
                         yield line.strip()
                         continue
-                    if re.search(r"\.(nib|NIB|woz|d13|D13|do|DO|po|PO)$", line):
+                    if re.search(r"\.(woz|d13|D13|do|DO|po|PO|2mg|2MG|edd|EDD|nib|NIB)$", line):
+                        if all_extensions:
+                            yield line.strip()
                         continue
-                    if re.search(r"\.(2mg|2MG|v2d|txt|rtf|dmg|pdf|png|zip|asm|shk|sdk|SDK|ZIP|SHK|bqy|tar|readme|bxy|BXY|TXT|sit|SIT|PDF|bad|c|docs|jpeg|img|hdv|HDV|index|tep|wav|DO_readme|bin|bsc|exec|jpg|TEXT|html|EDD|m4a|GIF|fdi|BQY|BIN|DOCS|\$E0|BNY|Z|BAS|features|ASM|rar|htm|doc|sol|gif|edd)$", line):
+                    if re.search(r"\.(v2d|txt|rtf|dmg|pdf|png|zip|asm|shk|sdk|SDK|ZIP|SHK|bqy|tar|readme|bxy|BXY|TXT|sit|SIT|PDF|bad|c|docs|jpeg|img|hdv|HDV|index|tep|wav|DO_readme|bin|bsc|exec|jpg|TEXT|html|m4a|GIF|fdi|BQY|BIN|DOCS|\$E0|BNY|Z|BAS|features|ASM|rar|htm|doc|sol|gif)$", line):
                         continue
                     if re.match(r"\./images/misc/select10$", line):
                         continue
@@ -78,6 +80,7 @@ def get_paths():
 
 
 if __name__ == "__main__":
-    with open("filtered_paths.txt", "w") as out_file:
-        for path in get_paths():
-            out_file.write(path + "\n")
+    with open("filtered_paths_all.txt", "w") as out_file:
+        for path in get_paths(all_extensions=True):
+            # out_file.write(path + "\n")
+            out_file.write(path.split(".")[-1].upper() + "\t" + path + "\n")
