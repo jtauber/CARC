@@ -53,7 +53,7 @@ Rather than precisely move the head to track zero on boot, the disk controller
 just moves the head out by 80 positions. This guarantees it is in the outermost
 position regardless of its starting point. This is also what causes the
 distinctive thunk-thunk-thunk sound on disk boot as the head repeatedly hits a
-rubber stopped designed to prevent it moving too far.
+rubber stopper designed to prevent it moving too far.
 
 At this point in the code, we’ve just calculated `SLOT16` and it is still in
 the accumulator. We transfer it to `X`:
