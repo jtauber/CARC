@@ -311,7 +311,7 @@ Otherwise we just proceed to read the next sector. How can we tell?
 
 We rely on the fact that, immediately after `BOOT0` has loaded the boot sector into `$0800`, `$26`/`$27` will contain the next page: `#$0900`. In other words, `$27` will contain `#$09`. But once we’ve loading DOS into `$B600`-`$BFFF`, `$27` will no longer contain `#$09`.
 
-So we firstly load `$27` into `A:
+So we firstly load `$27` into `A`:
 
 ```
 0801: A5 27         LDA $27

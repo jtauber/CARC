@@ -152,6 +152,9 @@ code, pre {
 code {
   padding: 0.1rem 0.3rem;
 }
+pre > code {
+  padding: 0;
+}
 pre {
   font-size: 12pt;
   background: hsl(60, 100%, 5%);

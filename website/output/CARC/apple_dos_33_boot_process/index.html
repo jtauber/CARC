@@ -9,7 +9,7 @@
       <meta name="description" content="Corpus Analysis of Retro Code">
     
     
-    <link rel="stylesheet" href="/CARC/style.css?b94be8cf98a421a672a2ba2515d8d91b">
+    <link rel="stylesheet" href="/CARC/style.css?318c7cd29d326a615fba54cbbc379df3">
     <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
   </head>
   <body class="base">
@@ -267,7 +267,7 @@ We first of all increment this to bring it back.</p>
 <p>If it’s our first time, we need to set up the sector read call, the read buffer address, and the number of sectors to read.
 Otherwise we just proceed to read the next sector. How can we tell?</p>
 <p>We rely on the fact that, immediately after <code>BOOT0</code> has loaded the boot sector into <code>$0800</code>, <code>$26</code>/<code>$27</code> will contain the next page: <code>#$0900</code>. In other words, <code>$27</code> will contain <code>#$09</code>. But once we’ve loading DOS into <code>$B600</code>-<code>$BFFF</code>, <code>$27</code> will no longer contain <code>#$09</code>.</p>
-<p>So we firstly load <code>$27</code> into `A:</p>
+<p>So we firstly load <code>$27</code> into <code>A</code>:</p>
 <pre class="codehilite"><code>0801: A5 27         LDA $27
 </code></pre>
 
