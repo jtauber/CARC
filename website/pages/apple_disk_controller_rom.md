@@ -59,58 +59,63 @@ At this point in the code, we’ve just calculated `SLOT16` and it is still in
 the accumulator. We transfer it to `X`:
 
 ```
-C62E: AA            TAX
+Cs2E: AA            TAX
 ```
 
 We ready the latch for reading and strobe it.
 
 ```
-C62F: BD 8E C0      LDA $C08E,X
-C632: BD 8C C0      LDA $C08C,X
+Cs2F: BD 8E C0      LDA $C08E,X
+Cs32: BD 8C C0      LDA $C08C,X
 ```
 
 Then we select drive 1 and spin up the motor.
 ```
-C635: BD 8A C0      LDA $C08A,X
-C638: BD 89 C0      LDA $C089,X
+Cs35: BD 8A C0      LDA $C08A,X
+Cs38: BD 89 C0      LDA $C089,X
 ```
 
 We want to loop 80 times, so we put that in `Y`:
 
 ```
-C63B: A0 50         LDY #80
+Cs3B: A0 50         LDY #80
 ```
 
-We turn off the Phase 0 stepper motor. (Remember that initially `X` is `SLOT16`.)
+We turn off the Phase 0 stepper motor. Remember that initially `X` is `SLOT16`.
 
 ```
-C63D: BD 80 C0      LDA $C080,X
+Cs3D: BD 80 C0      LDA $C080,X
 ```
 
-We now take the loop index (in `Y`) modulo 4 (to the get the phase) and
+Note that on subsequent steps of the loop, `X` will be `SLOT16` plus 2 * PHASE.
+We’re now at the part of the code that will calculate this.
+
+We take the loop index (in `Y`) modulo 4 (to get the phase) and
 double it (to get the low four bits of the address to toggle).
 
 ```
-C640: 98            TYA
-C641: 29 03         AND #$03
-C643: 0A            ASL
+Cs40: 98            TYA
+Cs41: 29 03         AND #$03
+Cs43: 0A            ASL
 ```
 
 When `Y` is `80`, we get `0`; when `Y` is `79`, we get `6`; when `Y` is `78`,
 we get `4`; then `2`; then back to `0` and so on. In other words, 2 * PHASE.
+And because `Y` is decrementing, we are cycling through the phases in descending
+order which means the head will move outwards.
 
 `SLOT16` is also in zero-page `$2B` so lets combine that with the 2 * PHASE.
 
 ```
-C644: 05 2B         ORA SLOT16
-C646: AA            TAX
+Cs44: 05 2B         ORA $2B
+Cs46: AA            TAX
 ```
 
 Now `X` is `SLOT16` + 2 * PHASE, which is exactly what we need to turn on
 that stepper motor phase.
 
 ```
-C647: BD 81 C0      LDA $C081,X
+Cs47: BD 81 C0      LDA $C081,X
 ```
 
 Now the timing is important. We need to wait about 20 milliseconds. There is
@@ -121,13 +126,13 @@ We set `A` to `#$56` and call `MON_WAIT` which will consume a total of 19,664
 cycles including the `JSR`.
 
 ```
-C64A: A9 56         LDA #$56
-C64C: 20 A8 FC      JSR MON_WAIT
+Cs4A: A9 56         LDA #$56
+Cs4C: 20 A8 FC      JSR MON_WAIT
 ```
 
 We now decrement the index and loop.
 
 ```
-C64F: 88            DEY
-C650: 10 EB         BPL $C63D
+Cs4F: 88            DEY
+Cs50: 10 EB         BPL $Cs3D
 ```
