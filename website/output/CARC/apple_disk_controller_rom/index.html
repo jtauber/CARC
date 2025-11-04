@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apple Disk Controller ROM | CARC</title>
+    
+    
+      <meta name="description" content="Corpus Analysis of Retro Code">
+    
+    
+    <link rel="stylesheet" href="/CARC/style.css?1c9f7987accc6b28287cb484a4912c8c">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body class="base">
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in <cite>The Hobbit</cite>.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <h1>Apple Disk Controller ROM</h1>
+
+  <p>The disk hardware is controlled through 16 latched toggles mapped to
+addresses <code>$C0<var>Z</var>0</code> through <code>$C0<var>Z</var>F</code>
+where <code><var>Z</var></code> is the slot number + 8.</p>
+<p>This is achieved using an index addressing mode with <code>SLOT16</code> (16 times the
+slot number) in <code>X</code>: e.g. <code>LDA $C089,X</code>.</p>
+<p>The first eight of these turn off or on different stepper phases. </p>
+<table class="table">
+  <tr><td><code>$C0<var>Z</var>0</code></td><td>Phase 0 OFF</td></tr>
+  <tr><td><code>$C0<var>Z</var>1</code></td><td>Phase 0 ON</td></tr>
+  <tr><td><code>$C0<var>Z</var>2</code></td><td>Phase 1 OFF</td></tr>
+  <tr><td><code>$C0<var>Z</var>3</code></td><td>Phase 1 ON</td></tr>
+  <tr><td><code>$C0<var>Z</var>4</code></td><td>Phase 2 OFF</td></tr>
+  <tr><td><code>$C0<var>Z</var>5</code></td><td>Phase 2 ON</td></tr>
+  <tr><td><code>$C0<var>Z</var>6</code></td><td>Phase 3 OFF</td></tr>
+  <tr><td><code>$C0<var>Z</var>7</code></td><td>Phase 3 ON</td></tr>
+</table>
+
+<p>To move the head inward, the phases are turned on and off in ascending order
+at a particular timing. To move the head outward, the same is done in
+descending order.</p>
+<p>There are 70 positions the head can take but data written from adjacent
+positions can interfere with each other and so the usable positions must be
+separated. In practice, Apple DOS used the even positions (although one
+copy-protection tactic was to use odd positions or some other pattern
+that avoided adjacent positions).</p>
+<p>The next eight toggles were as follows:</p>
+<table class="table">
+  <tr><td><code>$C0<var>Z</var>8</code></td><td>Motor OFF</td></tr>
+  <tr><td><code>$C0<var>Z</var>9</code></td><td>Motor ON</td></tr>
+  <tr><td><code>$C0<var>Z</var>A</code></td><td>Select Drive 1</td></tr>
+  <tr><td><code>$C0<var>Z</var>B</code></td><td>Select Drive 2</td></tr>
+  <tr><td><code>$C0<var>Z</var>C</code></td><td>Strobe Data Latch</td></tr>
+  <tr><td><code>$C0<var>Z</var>D</code></td><td>Load Data Latch</td></tr>
+  <tr><td><code>$C0<var>Z</var>E</code></td><td>Ready Latch for Read</td></tr>
+  <tr><td><code>$C0<var>Z</var>F</code></td><td>Ready Latch for Write</td></tr>
+</table>
+
+<p>We will cover these in more detail as we encounter them.</p>
+<h2>Seeking Track Zero</h2>
+<p>Rather than precisely move the head to track zero on boot, the disk controller
+just moves the head out by 80 positions. This guarantees it is in the outermost
+position regardless of its starting point. This is also what causes the
+distinctive thunk-thunk-thunk sound on disk boot as the head repeatedly hits a
+rubber stopped designed to prevent it moving too far.</p>
+<p>At this point in the code, we’ve just calculated <code>SLOT16</code> and it is still in
+the accumulator. We transfer it to <code>X</code>:</p>
+<pre class="codehilite"><code>C62E: AA            TAX
+</code></pre>
+
+<p>We ready the latch for reading and strobe it.</p>
+<pre class="codehilite"><code>C62F: BD 8E C0      LDA $C08E,X
+C632: BD 8C C0      LDA $C08C,X
+</code></pre>
+
+<p>Then we select drive 1 and spin up the motor.</p>
+<pre class="codehilite"><code>C635: BD 8A C0      LDA $C08A,X
+C638: BD 89 C0      LDA $C089,X
+</code></pre>
+
+<p>We want to loop 80 times, so we put that in <code>Y</code>:</p>
+<pre class="codehilite"><code>C63B: A0 50         LDY #80
+</code></pre>
+
+<p>We turn off the Phase 0 stepper motor. (Remember that initially <code>X</code> is <code>SLOT16</code>.)</p>
+<pre class="codehilite"><code>C63D: BD 80 C0      LDA $C080,X
+</code></pre>
+
+<p>We now take the loop index (in <code>Y</code>) modulo 4 (to the get the phase) and
+double it (to get the low four bits of the address to toggle).</p>
+<pre class="codehilite"><code>C640: 98            TYA
+C641: 29 03         AND #$03
+C643: 0A            ASL
+</code></pre>
+
+<p>When <code>Y</code> is <code>80</code>, we get <code>0</code>; when <code>Y</code> is <code>79</code>, we get <code>6</code>; when <code>Y</code> is <code>78</code>,
+we get <code>4</code>; then <code>2</code>; then back to <code>0</code> and so on. In other words, 2 * PHASE.</p>
+<p><code>SLOT16</code> is also in zero-page <code>$2B</code> so lets combine that with the 2 * PHASE.</p>
+<pre class="codehilite"><code>C644: 05 2B         ORA SLOT16
+C646: AA            TAX
+</code></pre>
+
+<p>Now <code>X</code> is <code>SLOT16</code> + 2 * PHASE, which is exactly what we need to turn on
+that stepper motor phase.</p>
+<pre class="codehilite"><code>C647: BD 81 C0      LDA $C081,X
+</code></pre>
+
+<p>Now the timing is important. We need to wait about 20 milliseconds. There is
+a <code>MON_WAIT</code> routine in the monitor (<code>$FCA8</code>) that consumes cycles as a quadratic
+function of the accumulator (the number of cycles is 2.5 * A**2 + 13.5 * A +7).</p>
+<p>We set <code>A</code> to <code>#$56</code> and call <code>MON_WAIT</code> which will consume a total of 19,664
+cycles including the <code>JSR</code>.</p>
+<pre class="codehilite"><code>C64A: A9 56         LDA #$56
+C64C: 20 A8 FC      JSR MON_WAIT
+</code></pre>
+
+<p>We now decrement the index and loop.</p>
+<pre class="codehilite"><code>C64F: 88            DEY
+C650: 10 EB         BPL $C63D
+</code></pre>
+
+    </main>
+  </body>
+</html>

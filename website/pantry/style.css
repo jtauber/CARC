@@ -174,3 +174,7 @@ table.table td {
   border: 1px solid var(--dimmed-color);
   padding: 0.3rem 0.8rem;
 }
+code > var {
+  font-style: normal;
+  color: var(--primary-color);
+}

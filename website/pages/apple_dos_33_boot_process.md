@@ -304,7 +304,7 @@ And finally jump to the address in `$08FD` (which will be `$B700` normally):
 
 ## The Start of `BOOT1`
 
-The only part we haven’t covered is the initial code at `$0801` that is both run initially and after each sector read.
+The only part of `BOOT1` we haven’t covered is the initial code at `$0801` that is both run initially and after each sector read.
 
 If it’s our first time, we need to set up the sector read call, the read buffer address, and the number of sectors to read.
 Otherwise we just proceed to read the next sector. How can we tell?
