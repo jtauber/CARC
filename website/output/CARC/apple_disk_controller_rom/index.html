@@ -125,7 +125,7 @@ Cs38: BD 89 C0      LDA $C089,X
 <pre class="codehilite"><code>Cs3D: BD 80 C0      LDA $C080,X
 </code></pre>
 
-<p>Note that on subsequent steps of the loop, <code>X</code> will be <code>SLOT16</code> plus 2 * PHASE.
+<p>Note that on subsequent steps of the loop, <code>X</code> will be <code>SLOT16</code> plus 2 × PHASE.
 We’re now at the part of the code that will calculate this.</p>
 <p>We take the loop index (in <code>Y</code>) modulo 4 (to get the phase) and
 double it (to get the low four bits of the address to toggle).</p>
@@ -135,22 +135,22 @@ Cs43: 0A            ASL
 </code></pre>
 
 <p>When <code>Y</code> is <code>80</code>, we get <code>0</code>; when <code>Y</code> is <code>79</code>, we get <code>6</code>; when <code>Y</code> is <code>78</code>,
-we get <code>4</code>; then <code>2</code>; then back to <code>0</code> and so on. In other words, 2 * PHASE.
+we get <code>4</code>; then <code>2</code>; then back to <code>0</code> and so on. In other words, 2 × PHASE.
 And because <code>Y</code> is decrementing, we are cycling through the phases in descending
 order which means the head will move outwards.</p>
-<p><code>SLOT16</code> is also in zero-page <code>$2B</code> so lets combine that with the 2 * PHASE.</p>
+<p><code>SLOT16</code> is also in zero-page <code>$2B</code> so lets combine that with the 2 × PHASE.</p>
 <pre class="codehilite"><code>Cs44: 05 2B         ORA $2B
 Cs46: AA            TAX
 </code></pre>
 
-<p>Now <code>X</code> is <code>SLOT16</code> + 2 * PHASE, which is exactly what we need to turn on
+<p>Now <code>X</code> is <code>SLOT16</code> + 2 × PHASE, which is exactly what we need to turn on
 that stepper motor phase.</p>
 <pre class="codehilite"><code>Cs47: BD 81 C0      LDA $C081,X
 </code></pre>
 
 <p>Now the timing is important. We need to wait about 20 milliseconds. There is
 a <code>MON_WAIT</code> routine in the monitor (<code>$FCA8</code>) that consumes cycles as a quadratic
-function of the accumulator (the number of cycles is 2.5 * A**2 + 13.5 * A +7).</p>
+function of the accumulator (the number of cycles is 2.5<code>A</code>² + 13.5<code>A</code> + 7).</p>
 <p>We set <code>A</code> to <code>#$56</code> and call <code>MON_WAIT</code> which will consume a total of 19,664
 cycles including the <code>JSR</code>.</p>
 <pre class="codehilite"><code>Cs4A: A9 56         LDA #$56
@@ -161,6 +161,103 @@ Cs4C: 20 A8 FC      JSR MON_WAIT
 <pre class="codehilite"><code>Cs4F: 88            DEY
 Cs50: 10 EB         BPL $Cs3D
 </code></pre>
+
+<p>Once we’ve moved the head out, we set up some more zero-page values.</p>
+<p>Note that <code>A</code> is now <code>#$00</code> because that’s what it ends up as after a <code>MON_WAIT</code>.</p>
+<pre class="codehilite"><code>Cs52: 85 26         STA $26
+Cs54: 85 3D         STA $3D
+Cs56: 85 41         STA $41
+Cs58: A9 08         LDA #$08
+Cs5A: 85 27         STA $27
+</code></pre>
+
+<p>So this puts <code>#$0800</code> into <code>$26</code>/<code>$27</code> (the location of the data better to load
+the first sector into) and <code>#$00</code> into <code>$3D</code> (the sector to load) and <code>$41</code> (the
+track to load).</p>
+<h2>Looking for Headers</h2>
+<p>With our drive head on the outermost track, we’re now going to read bytes until
+we see what’s known as the <strong>address header</strong>. We’ll then check we’ve got track
+0 and sector 0 and, then look for the <strong>data header</strong> and load in the data.</p>
+<p>Whether we’re looking for the address header or the subsequent data header is
+captured in the carry flag.</p>
+<p>Because we want to find the address header first, we clear the carry and store
+the flags on the stack.</p>
+<pre class="codehilite"><code>Cs5C: 18            CLC
+Cs5D: 08            PHP
+</code></pre>
+
+<p>Next we strobe the latch until the high bit is on (which indicates data has
+been read).</p>
+<pre class="codehilite"><code>Cs5E: BD 8C C0      LDA $C08C,X
+Cs61: 10 FB         BPL $Cs5E
+</code></pre>
+
+<p>Then we test whether it is <code>#$D5</code> and, if not, loop back and read again.</p>
+<pre class="codehilite"><code>Cs63: 49 D5         EOR #$D5
+Cs65: D0 F7         BNE $Cs5E
+</code></pre>
+
+<p>It is important to note that the actual bytes read off disk into the latch
+are not the actual bytes we’re ultimately going to load into memory. The data
+is encoded to get around certain physical limitations in the hardware. We’ll
+shortly get into two types of encoding used.</p>
+<p>Both the address header and data header start with <code>$D5</code> so that’s what we
+initially look for. It is not actually possible to get a <code>$D5</code> in either of
+the encodings used and so a <code>$D5</code> can only mean the start of a header.</p>
+<p>The next byte, whether an address header or data header, is always <code>$AA</code>.</p>
+<p>We loop until we get the high bit set on the latch.</p>
+<pre class="codehilite"><code>Cs67: BD 8C C0      LDA $C08C,X
+Cs6A: 10 FB         BPL $Cs67
+</code></pre>
+
+<p>Then we compare what we get with <code>#$AA</code>. Notice this time we use <code>CMP</code> not <code>EOR</code>.
+That is because we want to keep the value in <code>A</code> (<code>EOR</code> is destructive).
+If we didn’t get an <code>$AA</code> we jump back to see if we actually got another <code>$D5</code>.</p>
+<pre class="codehilite"><code>Cs6C: C9 AA         CMP #$AA
+Cs6E: D0 F3         BNE $Cs63
+Cs70: EA            NOP
+</code></pre>
+
+<p>If we did get an <code>$AA</code>, we continue. It’s not clear why there is an <code>NOP</code> here.</p>
+<p>We read the third byte</p>
+<pre class="codehilite"><code>Cs71: BD 8C C0      LDA $C08C,X
+Cs74: 10 FB         BPL $C6s71
+</code></pre>
+
+<p>and compare it to <code>#$96</code>.</p>
+<pre class="codehilite"><code>Cs76: C9 96         CMP #$96
+Cs78: F0 09         BEQ $Cs83
+</code></pre>
+
+<p>If so, we have an address header <code>D5 AA 96</code> and jump to <code>$Cs83</code> to handle it.</p>
+<p>Note that we do this <em>even if we were looking for a data header</em> because it
+means we’ve hit a new sector and need to check if it’s the right one.</p>
+<p>But if we got a <code>D5 AA</code> that isn’t followed by a <code>96</code>, what we do next does
+depend on whether we’re looking for data and so we pull the status and if we
+were actually looking for an address header (i.e. the carry flag is clear),
+we'll start the whole process again.</p>
+<pre class="codehilite"><code>Cs7A: 28            PLP
+Cs7B: 90 DF         BCC $Cs5C
+</code></pre>
+
+<p>But if we are looking for data, we check if we got a <code>#$AD</code> (because a data
+header starts with <code>D5 AA AD</code>). If so, we branch to <code>$CsA6</code> to handle the data.
+Otherwise we go back and keep looking.</p>
+<pre class="codehilite"><code>Cs7D: 49 AD         EOR #$AD
+Cs7F: F0 25         BEQ $CsA6
+Cs81: D0 D9         BNE $Cs5C
+</code></pre>
+
+<p>It is worth noting here what each of <code>D5</code>, <code>AA</code>, <code>96</code>, and <code>AD</code> look like in
+binary:</p>
+<table class="table">
+  <tr><td><code>D5</code></td><td><code>11010101</code></td></tr>
+  <tr><td><code>AA</code></td><td><code>10101010</code></td></tr>
+  <tr><td><code>96</code></td><td><code>10010110</code></td></tr>
+  <tr><td><code>AD</code></td><td><code>10101101</code></td></tr>
+</table>
+
+<p>TO BE CONTINUED</p>
 
     </main>
   </body>

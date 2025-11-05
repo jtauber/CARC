@@ -87,7 +87,7 @@ We turn off the Phase 0 stepper motor. Remember that initially `X` is `SLOT16`.
 Cs3D: BD 80 C0      LDA $C080,X
 ```
 
-Note that on subsequent steps of the loop, `X` will be `SLOT16` plus 2 * PHASE.
+Note that on subsequent steps of the loop, `X` will be `SLOT16` plus 2 × PHASE.
 We’re now at the part of the code that will calculate this.
 
 We take the loop index (in `Y`) modulo 4 (to get the phase) and
@@ -100,18 +100,18 @@ Cs43: 0A            ASL
 ```
 
 When `Y` is `80`, we get `0`; when `Y` is `79`, we get `6`; when `Y` is `78`,
-we get `4`; then `2`; then back to `0` and so on. In other words, 2 * PHASE.
+we get `4`; then `2`; then back to `0` and so on. In other words, 2 × PHASE.
 And because `Y` is decrementing, we are cycling through the phases in descending
 order which means the head will move outwards.
 
-`SLOT16` is also in zero-page `$2B` so lets combine that with the 2 * PHASE.
+`SLOT16` is also in zero-page `$2B` so lets combine that with the 2 × PHASE.
 
 ```
 Cs44: 05 2B         ORA $2B
 Cs46: AA            TAX
 ```
 
-Now `X` is `SLOT16` + 2 * PHASE, which is exactly what we need to turn on
+Now `X` is `SLOT16` + 2 × PHASE, which is exactly what we need to turn on
 that stepper motor phase.
 
 ```
@@ -120,7 +120,7 @@ Cs47: BD 81 C0      LDA $C081,X
 
 Now the timing is important. We need to wait about 20 milliseconds. There is
 a `MON_WAIT` routine in the monitor (`$FCA8`) that consumes cycles as a quadratic
-function of the accumulator (the number of cycles is 2.5 * A**2 + 13.5 * A +7).
+function of the accumulator (the number of cycles is 2.5`A`² + 13.5`A` + 7).
 
 We set `A` to `#$56` and call `MON_WAIT` which will consume a total of 19,664
 cycles including the `JSR`.
@@ -136,3 +136,132 @@ We now decrement the index and loop.
 Cs4F: 88            DEY
 Cs50: 10 EB         BPL $Cs3D
 ```
+
+Once we’ve moved the head out, we set up some more zero-page values.
+
+Note that `A` is now `#$00` because that’s what it ends up as after a `MON_WAIT`.
+
+```
+Cs52: 85 26         STA $26
+Cs54: 85 3D         STA $3D
+Cs56: 85 41         STA $41
+Cs58: A9 08         LDA #$08
+Cs5A: 85 27         STA $27
+```
+
+So this puts `#$0800` into `$26`/`$27` (the location of the data better to load
+the first sector into) and `#$00` into `$3D` (the sector to load) and `$41` (the
+track to load).
+
+## Looking for Headers
+
+With our drive head on the outermost track, we’re now going to read bytes until
+we see what’s known as the **address header**. We’ll then check we’ve got track
+0 and sector 0 and, then look for the **data header** and load in the data.
+
+Whether we’re looking for the address header or the subsequent data header is
+captured in the carry flag.
+
+Because we want to find the address header first, we clear the carry and store
+the flags on the stack.
+
+```
+Cs5C: 18            CLC
+Cs5D: 08            PHP
+```
+
+Next we strobe the latch until the high bit is on (which indicates data has
+been read).
+
+```
+Cs5E: BD 8C C0      LDA $C08C,X
+Cs61: 10 FB         BPL $Cs5E
+```
+
+Then we test whether it is `#$D5` and, if not, loop back and read again.
+
+```
+Cs63: 49 D5         EOR #$D5
+Cs65: D0 F7         BNE $Cs5E
+```
+
+It is important to note that the actual bytes read off disk into the latch
+are not the actual bytes we’re ultimately going to load into memory. The data
+is encoded to get around certain physical limitations in the hardware. We’ll
+shortly get into two types of encoding used.
+
+Both the address header and data header start with `$D5` so that’s what we
+initially look for. It is not actually possible to get a `$D5` in either of
+the encodings used and so a `$D5` can only mean the start of a header.
+
+The next byte, whether an address header or data header, is always `$AA`.
+
+We loop until we get the high bit set on the latch.
+
+```
+Cs67: BD 8C C0      LDA $C08C,X
+Cs6A: 10 FB         BPL $Cs67
+```
+
+Then we compare what we get with `#$AA`. Notice this time we use `CMP` not `EOR`.
+That is because we want to keep the value in `A` (`EOR` is destructive).
+If we didn’t get an `$AA` we jump back to see if we actually got another `$D5`.
+
+```
+Cs6C: C9 AA         CMP #$AA
+Cs6E: D0 F3         BNE $Cs63
+Cs70: EA            NOP
+```
+
+If we did get an `$AA`, we continue. It’s not clear why there is an `NOP` here.
+
+We read the third byte
+
+```
+Cs71: BD 8C C0      LDA $C08C,X
+Cs74: 10 FB         BPL $C6s71
+```
+
+and compare it to `#$96`.
+
+```
+Cs76: C9 96         CMP #$96
+Cs78: F0 09         BEQ $Cs83
+```
+
+If so, we have an address header `D5 AA 96` and jump to `$Cs83` to handle it.
+
+Note that we do this _even if we were looking for a data header_ because it
+means we’ve hit a new sector and need to check if it’s the right one.
+
+But if we got a `D5 AA` that isn’t followed by a `96`, what we do next does
+depend on whether we’re looking for data and so we pull the status and if we
+were actually looking for an address header (i.e. the carry flag is clear),
+we'll start the whole process again.
+
+```
+Cs7A: 28            PLP
+Cs7B: 90 DF         BCC $Cs5C
+```
+
+But if we are looking for data, we check if we got a `#$AD` (because a data
+header starts with `D5 AA AD`). If so, we branch to `$CsA6` to handle the data.
+Otherwise we go back and keep looking.
+
+```
+Cs7D: 49 AD         EOR #$AD
+Cs7F: F0 25         BEQ $CsA6
+Cs81: D0 D9         BNE $Cs5C
+```
+
+It is worth noting here what each of `D5`, `AA`, `96`, and `AD` look like in
+binary:
+
+<table class="table">
+  <tr><td><code>D5</code></td><td><code>11010101</code></td></tr>
+  <tr><td><code>AA</code></td><td><code>10101010</code></td></tr>
+  <tr><td><code>96</code></td><td><code>10010110</code></td></tr>
+  <tr><td><code>AD</code></td><td><code>10101101</code></td></tr>
+</table>
+
+TO BE CONTINUED
