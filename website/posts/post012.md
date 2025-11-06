@@ -1,0 +1,120 @@
+---
+title: Most Frequent Applesoft BASIC Tokens
+author: James Tauber
+date: 2025-11-06
+---
+Deduping the **35,117** Applesoft BASIC files using an MD5 hash, we get down
+to **25,464** files. What are the most frequent tokens in those files?
+How many files does each token appear in? And on how many disks?
+
+
+<table class="table">
+  <tr><th>code</th><th>token</th><th>occurrences</th><th>files</th><th>disks</th></tr>
+  <tr><td><code>$D0</code></td><td><code>=</code></td><td style="text-align: right;">2,197,259</td><td style="text-align: right;">22,607</td><td style="text-align: right;">3,831</td></tr>
+  <tr><td><code>$BA</code></td><td><code>PRINT</code></td><td style="text-align: right;">1,314,907</td><td style="text-align: right;">24,153</td><td style="text-align: right;">4,420</td></tr>
+  <tr><td><code>$AD</code></td><td><code>IF</code></td><td style="text-align: right;">622,207</td><td style="text-align: right;">19,653</td><td style="text-align: right;">3,566</td></tr>
+  <tr><td><code>$C8</code></td><td><code>+</code></td><td style="text-align: right;">610,700</td><td style="text-align: right;">18,782</td><td style="text-align: right;">3,478</td></tr>
+  <tr><td><code>$C4</code></td><td><code>THEN</code></td><td style="text-align: right;">607,814</td><td style="text-align: right;">19,466</td><td style="text-align: right;">3,548</td></tr>
+  <tr><td><code>$B0</code></td><td><code>GOSUB</code></td><td style="text-align: right;">520,918</td><td style="text-align: right;">15,774</td><td style="text-align: right;">3,197</td></tr>
+  <tr><td><code>$C9</code></td><td><code>-</code></td><td style="text-align: right;">383,512</td><td style="text-align: right;">18,891</td><td style="text-align: right;">3,555</td></tr>
+  <tr><td><code>$AB</code></td><td><code>GOTO</code></td><td style="text-align: right;">363,893</td><td style="text-align: right;">18,901</td><td style="text-align: right;">3,497</td></tr>
+  <tr><td><code>$C1</code></td><td><code>TO</code></td><td style="text-align: right;">345,009</td><td style="text-align: right;">18,570</td><td style="text-align: right;">3,446</td></tr>
+  <tr><td><code>$B9</code></td><td><code>POKE</code></td><td style="text-align: right;">276,589</td><td style="text-align: right;">17,264</td><td style="text-align: right;">3,623</td></tr>
+  <tr><td><code>$A2</code></td><td><code>VTAB</code></td><td style="text-align: right;">276,473</td><td style="text-align: right;">16,241</td><td style="text-align: right;">3,475</td></tr>
+  <tr><td><code>$96</code></td><td><code>HTAB</code></td><td style="text-align: right;">255,410</td><td style="text-align: right;">13,748</td><td style="text-align: right;">3,223</td></tr>
+  <tr><td><code>$CF</code></td><td><code>></code></td><td style="text-align: right;">238,829</td><td style="text-align: right;">16,884</td><td style="text-align: right;">3,386</td></tr>
+  <tr><td><code>$D1</code></td><td><code><</code></td><td style="text-align: right;">222,194</td><td style="text-align: right;">16,695</td><td style="text-align: right;">3,353</td></tr>
+  <tr><td><code>$81</code></td><td><code>FOR</code></td><td style="text-align: right;">217,858</td><td style="text-align: right;">18,307</td><td style="text-align: right;">3,428</td></tr>
+  <tr><td><code>$82</code></td><td><code>NEXT</code></td><td style="text-align: right;">216,301</td><td style="text-align: right;">18,277</td><td style="text-align: right;">3,427</td></tr>
+  <tr><td><code>$B2</code></td><td><code>REM</code></td><td style="text-align: right;">215,507</td><td style="text-align: right;">16,902</td><td style="text-align: right;">3,269</td></tr>
+  <tr><td><code>$B1</code></td><td><code>RETURN</code></td><td style="text-align: right;">213,613</td><td style="text-align: right;">15,681</td><td style="text-align: right;">3,216</td></tr>
+  <tr><td><code>$CA</code></td><td><code>*</code></td><td style="text-align: right;">202,012</td><td style="text-align: right;">15,002</td><td style="text-align: right;">3,104</td></tr>
+  <tr><td><code>$AF</code></td><td><code>&</code></td><td style="text-align: right;">156,113</td><td style="text-align: right;">3,722</td><td style="text-align: right;">858</td></tr>
+  <tr><td><code>$E7</code></td><td><code>CHR$</code></td><td style="text-align: right;">153,112</td><td style="text-align: right;">19,220</td><td style="text-align: right;">3,976</td></tr>
+  <tr><td><code>$E2</code></td><td><code>PEEK</code></td><td style="text-align: right;">114,999</td><td style="text-align: right;">14,087</td><td style="text-align: right;">3,266</td></tr>
+  <tr><td><code>$CD</code></td><td><code>AND</code></td><td style="text-align: right;">108,474</td><td style="text-align: right;">10,551</td><td style="text-align: right;">2,797</td></tr>
+  <tr><td><code>$97</code></td><td><code>HOME</code></td><td style="text-align: right;">102,797</td><td style="text-align: right;">18,499</td><td style="text-align: right;">3,944</td></tr>
+  <tr><td><code>$8C</code></td><td><code>CALL</code></td><td style="text-align: right;">93,682</td><td style="text-align: right;">13,592</td><td style="text-align: right;">3,322</td></tr>
+  <tr><td><code>$C5</code></td><td><code>AT</code></td><td style="text-align: right;">91,420</td><td style="text-align: right;">4,766</td><td style="text-align: right;">1,473</td></tr>
+  <tr><td><code>$CE</code></td><td><code>OR</code></td><td style="text-align: right;">84,752</td><td style="text-align: right;">11,823</td><td style="text-align: right;">2,974</td></tr>
+  <tr><td><code>$CB</code></td><td><code>/</code></td><td style="text-align: right;">82,732</td><td style="text-align: right;">11,732</td><td style="text-align: right;">2,839</td></tr>
+  <tr><td><code>$93</code></td><td><code>HPLOT</code></td><td style="text-align: right;">79,392</td><td style="text-align: right;">6,200</td><td style="text-align: right;">1,742</td></tr>
+  <tr><td><code>$83</code></td><td><code>DATA</code></td><td style="text-align: right;">78,533</td><td style="text-align: right;">7,738</td><td style="text-align: right;">2,400</td></tr>
+  <tr><td><code>$84</code></td><td><code>INPUT</code></td><td style="text-align: right;">66,551</td><td style="text-align: right;">10,848</td><td style="text-align: right;">2,596</td></tr>
+  <tr><td><code>$D3</code></td><td><code>INT</code></td><td style="text-align: right;">64,068</td><td style="text-align: right;">10,728</td><td style="text-align: right;">2,711</td></tr>
+  <tr><td><code>$E3</code></td><td><code>LEN</code></td><td style="text-align: right;">56,610</td><td style="text-align: right;">9,478</td><td style="text-align: right;">2,635</td></tr>
+  <tr><td><code>$9D</code></td><td><code>NORMAL</code></td><td style="text-align: right;">53,647</td><td style="text-align: right;">9,928</td><td style="text-align: right;">2,709</td></tr>
+  <tr><td><code>$92</code></td><td><code>HCOLOR=</code></td><td style="text-align: right;">50,342</td><td style="text-align: right;">6,593</td><td style="text-align: right;">1,817</td></tr>
+  <tr><td><code>$9E</code></td><td><code>INVERSE</code></td><td style="text-align: right;">42,604</td><td style="text-align: right;">8,321</td><td style="text-align: right;">2,406</td></tr>
+  <tr><td><code>$BE</code></td><td><code>GET</code></td><td style="text-align: right;">40,441</td><td style="text-align: right;">11,063</td><td style="text-align: right;">2,783</td></tr>
+  <tr><td><code>$E5</code></td><td><code>VAL</code></td><td style="text-align: right;">37,492</td><td style="text-align: right;">7,497</td><td style="text-align: right;">2,375</td></tr>
+  <tr><td><code>$B4</code></td><td><code>ON</code></td><td style="text-align: right;">36,918</td><td style="text-align: right;">7,665</td><td style="text-align: right;">2,344</td></tr>
+  <tr><td><code>$C2</code></td><td><code>FN</code></td><td style="text-align: right;">36,639</td><td style="text-align: right;">2,298</td><td style="text-align: right;">896</td></tr>
+  <tr><td><code>$EA</code></td><td><code>MID$</code></td><td style="text-align: right;">36,355</td><td style="text-align: right;">7,017</td><td style="text-align: right;">2,327</td></tr>
+  <tr><td><code>$DB</code></td><td><code>RND</code></td><td style="text-align: right;">32,469</td><td style="text-align: right;">6,148</td><td style="text-align: right;">1,875</td></tr>
+  <tr><td><code>$E8</code></td><td><code>LEFT$</code></td><td style="text-align: right;">31,767</td><td style="text-align: right;">7,165</td><td style="text-align: right;">2,292</td></tr>
+  <tr><td><code>$C0</code></td><td><code>TAB</code></td><td style="text-align: right;">31,736</td><td style="text-align: right;">3,602</td><td style="text-align: right;">1,327</td></tr>
+  <tr><td><code>$89</code></td><td><code>TEXT</code></td><td style="text-align: right;">31,231</td><td style="text-align: right;">13,080</td><td style="text-align: right;">3,315</td></tr>
+  <tr><td><code>$94</code></td><td><code>DRAW</code></td><td style="text-align: right;">29,697</td><td style="text-align: right;">2,590</td><td style="text-align: right;">925</td></tr>
+  <tr><td><code>$E4</code></td><td><code>STR$</code></td><td style="text-align: right;">28,866</td><td style="text-align: right;">5,116</td><td style="text-align: right;">1,789</td></tr>
+  <tr><td><code>$C6</code></td><td><code>NOT</code></td><td style="text-align: right;">23,846</td><td style="text-align: right;">3,911</td><td style="text-align: right;">1,364</td></tr>
+  <tr><td><code>$E6</code></td><td><code>ASC</code></td><td style="text-align: right;">23,423</td><td style="text-align: right;">6,643</td><td style="text-align: right;">2,244</td></tr>
+  <tr><td><code>$C3</code></td><td><code>SPC(</code></td><td style="text-align: right;">22,877</td><td style="text-align: right;">3,389</td><td style="text-align: right;">1,285</td></tr>
+  <tr><td><code>$A0</code></td><td><code>COLOR=</code></td><td style="text-align: right;">22,533</td><td style="text-align: right;">1,629</td><td style="text-align: right;">788</td></tr>
+  <tr><td><code>$8E</code></td><td><code>HLIN</code></td><td style="text-align: right;">22,290</td><td style="text-align: right;">985</td><td style="text-align: right;">472</td></tr>
+  <tr><td><code>$8D</code></td><td><code>PLOT</code></td><td style="text-align: right;">22,084</td><td style="text-align: right;">1,357</td><td style="text-align: right;">618</td></tr>
+  <tr><td><code>$C7</code></td><td><code>STEP</code></td><td style="text-align: right;">21,190</td><td style="text-align: right;">6,770</td><td style="text-align: right;">2,235</td></tr>
+  <tr><td><code>$87</code></td><td><code>READ</code></td><td style="text-align: right;">20,495</td><td style="text-align: right;">7,743</td><td style="text-align: right;">2,418</td></tr>
+  <tr><td><code>$80</code></td><td><code>END</code></td><td style="text-align: right;">18,312</td><td style="text-align: right;">11,834</td><td style="text-align: right;">2,987</td></tr>
+  <tr><td><code>$8F</code></td><td><code>VLIN</code></td><td style="text-align: right;">17,164</td><td style="text-align: right;">983</td><td style="text-align: right;">474</td></tr>
+  <tr><td><code>$86</code></td><td><code>DIM</code></td><td style="text-align: right;">15,332</td><td style="text-align: right;">8,864</td><td style="text-align: right;">2,576</td></tr>
+  <tr><td><code>$A5</code></td><td><code>ONERR</code></td><td style="text-align: right;">15,068</td><td style="text-align: right;">7,817</td><td style="text-align: right;">2,336</td></tr>
+  <tr><td><code>$95</code></td><td><code>XDRAW</code></td><td style="text-align: right;">13,736</td><td style="text-align: right;">1,616</td><td style="text-align: right;">675</td></tr>
+  <tr><td><code>$E9</code></td><td><code>RIGHT$</code></td><td style="text-align: right;">12,026</td><td style="text-align: right;">3,721</td><td style="text-align: right;">1,535</td></tr>
+  <tr><td><code>$D4</code></td><td><code>ABS</code></td><td style="text-align: right;">10,314</td><td style="text-align: right;">2,582</td><td style="text-align: right;">1,147</td></tr>
+  <tr><td><code>$A9</code></td><td><code>SPEED=</code></td><td style="text-align: right;">10,001</td><td style="text-align: right;">3,137</td><td style="text-align: right;">1,195</td></tr>
+  <tr><td><code>$9F</code></td><td><code>FLASH</code></td><td style="text-align: right;">9,300</td><td style="text-align: right;">3,510</td><td style="text-align: right;">1,470</td></tr>
+  <tr><td><code>$98</code></td><td><code>ROT=</code></td><td style="text-align: right;">8,567</td><td style="text-align: right;">3,026</td><td style="text-align: right;">1,144</td></tr>
+  <tr><td><code>$91</code></td><td><code>HGR</code></td><td style="text-align: right;">7,975</td><td style="text-align: right;">4,565</td><td style="text-align: right;">1,608</td></tr>
+  <tr><td><code>$CC</code></td><td><code>;</code></td><td style="text-align: right;">7,674</td><td style="text-align: right;">1,947</td><td style="text-align: right;">821</td></tr>
+  <tr><td><code>$AA</code></td><td><code>LET</code></td><td style="text-align: right;">7,424</td><td style="text-align: right;">852</td><td style="text-align: right;">382</td></tr>
+  <tr><td><code>$A1</code></td><td><code>POP</code></td><td style="text-align: right;">6,703</td><td style="text-align: right;">2,608</td><td style="text-align: right;">1,103</td></tr>
+  <tr><td><code>$99</code></td><td><code>SCALE=</code></td><td style="text-align: right;">6,440</td><td style="text-align: right;">2,996</td><td style="text-align: right;">1,125</td></tr>
+  <tr><td><code>$A3</code></td><td><code>HIMEM:</code></td><td style="text-align: right;">4,887</td><td style="text-align: right;">4,136</td><td style="text-align: right;">1,448</td></tr>
+  <tr><td><code>$B8</code></td><td><code>DEF FN</code></td><td style="text-align: right;">4,675</td><td style="text-align: right;">2,170</td><td style="text-align: right;">876</td></tr>
+  <tr><td><code>$90</code></td><td><code>HGR2</code></td><td style="text-align: right;">4,429</td><td style="text-align: right;">2,171</td><td style="text-align: right;">918</td></tr>
+  <tr><td><code>$D6</code></td><td><code>FRE</code></td><td style="text-align: right;">3,830</td><td style="text-align: right;">2,256</td><td style="text-align: right;">1,137</td></tr>
+  <tr><td><code>$D5</code></td><td><code>USR</code></td><td style="text-align: right;">3,787</td><td style="text-align: right;">647</td><td style="text-align: right;">300</td></tr>
+  <tr><td><code>$AC</code></td><td><code>RUN</code></td><td style="text-align: right;">3,617</td><td style="text-align: right;">2,250</td><td style="text-align: right;">989</td></tr>
+  <tr><td><code>$DF</code></td><td><code>SIN</code></td><td style="text-align: right;">3,597</td><td style="text-align: right;">1,148</td><td style="text-align: right;">527</td></tr>
+  <tr><td><code>$B5</code></td><td><code>WAIT</code></td><td style="text-align: right;">3,445</td><td style="text-align: right;">1,675</td><td style="text-align: right;">678</td></tr>
+  <tr><td><code>$AE</code></td><td><code>RESTORE</code></td><td style="text-align: right;">3,371</td><td style="text-align: right;">2,431</td><td style="text-align: right;">1,173</td></tr>
+  <tr><td><code>$8A</code></td><td><code>PR #</code></td><td style="text-align: right;">3,304</td><td style="text-align: right;">1,710</td><td style="text-align: right;">856</td></tr>
+  <tr><td><code>$BD</code></td><td><code>CLEAR</code></td><td style="text-align: right;">3,024</td><td style="text-align: right;">2,110</td><td style="text-align: right;">914</td></tr>
+  <tr><td><code>$DE</code></td><td><code>COS</code></td><td style="text-align: right;">2,987</td><td style="text-align: right;">979</td><td style="text-align: right;">460</td></tr>
+  <tr><td><code>$DA</code></td><td><code>SQR</code></td><td style="text-align: right;">2,606</td><td style="text-align: right;">1,003</td><td style="text-align: right;">465</td></tr>
+  <tr><td><code>$88</code></td><td><code>GR</code></td><td style="text-align: right;">2,605</td><td style="text-align: right;">1,374</td><td style="text-align: right;">631</td></tr>
+  <tr><td><code>$A6</code></td><td><code>RESUME</code></td><td style="text-align: right;">2,482</td><td style="text-align: right;">1,958</td><td style="text-align: right;">747</td></tr>
+  <tr><td><code>$D2</code></td><td><code>SGN</code></td><td style="text-align: right;">2,414</td><td style="text-align: right;">795</td><td style="text-align: right;">470</td></tr>
+  <tr><td><code>$A4</code></td><td><code>LOMEM:</code></td><td style="text-align: right;">2,392</td><td style="text-align: right;">2,247</td><td style="text-align: right;">866</td></tr>
+  <tr><td><code>$D8</code></td><td><code>PDL</code></td><td style="text-align: right;">2,128</td><td style="text-align: right;">687</td><td style="text-align: right;">377</td></tr>
+  <tr><td><code>$D7</code></td><td><code>SCRN (</code></td><td style="text-align: right;">2,072</td><td style="text-align: right;">370</td><td style="text-align: right;">262</td></tr>
+  <tr><td><code>$B3</code></td><td><code>STOP</code></td><td style="text-align: right;">2,006</td><td style="text-align: right;">1,400</td><td style="text-align: right;">677</td></tr>
+  <tr><td><code>$DC</code></td><td><code>LOG</code></td><td style="text-align: right;">1,446</td><td style="text-align: right;">390</td><td style="text-align: right;">208</td></tr>
+  <tr><td><code>$D9</code></td><td><code>POS</code></td><td style="text-align: right;">1,116</td><td style="text-align: right;">361</td><td style="text-align: right;">212</td></tr>
+  <tr><td><code>$BF</code></td><td><code>NEW</code></td><td style="text-align: right;">958</td><td style="text-align: right;">790</td><td style="text-align: right;">490</td></tr>
+  <tr><td><code>$85</code></td><td><code>DEL</code></td><td style="text-align: right;">897</td><td style="text-align: right;">394</td><td style="text-align: right;">260</td></tr>
+  <tr><td><code>$BC</code></td><td><code>LIST</code></td><td style="text-align: right;">868</td><td style="text-align: right;">428</td><td style="text-align: right;">224</td></tr>
+  <tr><td><code>$E1</code></td><td><code>ATN</code></td><td style="text-align: right;">823</td><td style="text-align: right;">434</td><td style="text-align: right;">210</td></tr>
+  <tr><td><code>$B6</code></td><td><code>LOAD</code></td><td style="text-align: right;">746</td><td style="text-align: right;">187</td><td style="text-align: right;">93</td></tr>
+  <tr><td><code>$A8</code></td><td><code>STORE</code></td><td style="text-align: right;">669</td><td style="text-align: right;">291</td><td style="text-align: right;">209</td></tr>
+  <tr><td><code>$DD</code></td><td><code>EXP</code></td><td style="text-align: right;">637</td><td style="text-align: right;">283</td><td style="text-align: right;">157</td></tr>
+  <tr><td><code>$8B</code></td><td><code>IN #</code></td><td style="text-align: right;">589</td><td style="text-align: right;">360</td><td style="text-align: right;">222</td></tr>
+  <tr><td><code>$B7</code></td><td><code>SAVE</code></td><td style="text-align: right;">526</td><td style="text-align: right;">181</td><td style="text-align: right;">112</td></tr>
+  <tr><td><code>$E0</code></td><td><code>TAN</code></td><td style="text-align: right;">337</td><td style="text-align: right;">181</td><td style="text-align: right;">118</td></tr>
+  <tr><td><code>$A7</code></td><td><code>RECALL</code></td><td style="text-align: right;">296</td><td style="text-align: right;">121</td><td style="text-align: right;">92</td></tr>
+  <tr><td><code>$9C</code></td><td><code>NOTRACE</code></td><td style="text-align: right;">232</td><td style="text-align: right;">196</td><td style="text-align: right;">147</td></tr>
+  <tr><td><code>$9B</code></td><td><code>TRACE</code></td><td style="text-align: right;">165</td><td style="text-align: right;">67</td><td style="text-align: right;">42</td></tr>
+  <tr><td><code>$9A</code></td><td><code>SHLOAD</code></td><td style="text-align: right;">134</td><td style="text-align: right;">119</td><td style="text-align: right;">69</td></tr>
+  <tr><td><code>$BB</code></td><td><code>CONT</code></td><td style="text-align: right;">97</td><td style="text-align: right;">56</td><td style="text-align: right;">40</td></tr>
+</table>
