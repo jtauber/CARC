@@ -5,7 +5,7 @@ date: 2025-11-06
 ---
 Of the **6,998** “normal” disks in the Apple II Disk Corpus, **5,870** of them
 contain at least one Applesoft BASIC file. As mentioned in a previous post, this
-amounts to 35,117 Applesoft BASIC files in this subcorpus.
+amounts to **35,117** Applesoft BASIC files in this subcorpus.
 
 Over time we will study these files in detail but, for now, here are the most
 common file names for Applesoft BASIC files:
