@@ -264,4 +264,219 @@ binary:
   <tr><td><code>AD</code></td><td><code>10101101</code></td></tr>
 </table>
 
+## Reading An Address Header
+
+If `D5 AA 96` is read, we have an address header.
+
+The payload of the address header is made up of three bytes: the volume, track,
+and sector, followed by a checksum byte.
+
+But these aren’t stored as bytes. Instead they are each encoded using two bytes:
+one containing the odd bits and one containing the even bits, with a `1` in
+between.
+
+In other words, 
+
+<table class="table">
+  <tr>
+    <td>D<sub>7</sub></td>
+    <td>D<sub>6</sub></td>
+    <td>D<sub>5</sub></td>
+    <td>D<sub>4</sub></td>
+    <td>D<sub>3</sub></td>
+    <td>D<sub>2</sub></td>
+    <td>D<sub>1</sub></td>
+    <td>D<sub>0</sub></td>
+  </tr>
+</table>
+
+is stored as:
+
+<table class="table">
+  <tr>
+    <td><code>1</code></td>
+    <td>D<sub>7</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>5</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>3</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>1</sub></td>
+    <th>&nbsp;</th>
+    <td><code>1</code></td>
+    <td>D<sub>6</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>4</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>2</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>0</sub></td>
+  </tr>
+</table>
+
+To read the three components of the address header payload, we’re going to use
+the `Y` register as our decrementing index. So we initially set it to 3.
+
+```
+Cs83: A0 03         LDY #$03
+```
+
+This is the start of our loop. We store whatever we have in the accumulator in
+zero-page `$40`. This will initially be the `96` from the address header prologue.
+But on subsequent steps will be the volume then track.
+
+```
+Cs85: 85 40         STA $40
+```
+
+We read the latch, looping until we get the high bit set.
+
+```
+Cs87: BD 8C C0      LDA $C08C,X
+Cs8A: 10 FB         BPL $Cs87
+```
+
+Remember this is our first byte. We rotate it to the left so
+
+<table class="table">
+  <tr>
+    <td><code>1</code></td>
+    <td>D<sub>7</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>5</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>3</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>1</sub></td>
+  </tr>
+</table>
+
+becomes
+
+<table class="table">
+  <tr>
+    <td>D<sub>7</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>5</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>3</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>1</sub></td>
+    <td><code>1</code></td>
+  </tr>
+</table>
+
+and this is then stored in zero-page `$3C`.
+
+```
+Cs8C: 2A            ROL
+Cs8D: 85 3C         STA $3C
+```
+
+We then read the second byte:
+
+```
+Cs8F: BD 8C C0      LDA     $C08C,X
+Cs92: 10 FB         BPL     $Cs8F
+```
+
+We then `AND`
+
+<table class="table">
+  <tr>
+    <td>D<sub>7</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>5</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>3</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>1</sub></td>
+    <td><code>1</code></td>
+  </tr>
+</table>
+
+<table class="table">
+  <tr>
+    <td><code>1</code></td>
+    <td>D<sub>6</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>4</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>2</sub></td>
+    <td><code>1</code></td>
+    <td>D<sub>0</sub></td>
+  </tr>
+</table>
+
+to get back
+
+<table class="table">
+  <tr>
+    <td>D<sub>7</sub></td>
+    <td>D<sub>6</sub></td>
+    <td>D<sub>5</sub></td>
+    <td>D<sub>4</sub></td>
+    <td>D<sub>3</sub></td>
+    <td>D<sub>2</sub></td>
+    <td>D<sub>1</sub></td>
+    <td>D<sub>0</sub></td>
+  </tr>
+</table>
+
+```
+Cs94: 25 3C         AND $3C
+```
+
+Now we loop back until `Y` is zero:
+
+```
+Cs96: 88            DEY
+Cs97: D0 EC         BNE $Cs85
+```
+
+Once this loop exits, the accumulator will contain the sector from the header
+and zero-page `$40` will contain the track from the header (written at the
+start of the final loop pass).
+
+At this point, we still have the status register on the stack, so we pull it.
+
+```
+Cs99: 28            PLP
+```
+
+Going in to this whole routine, the zero-page `$3D` contains the desired sector
+number and the zero-page `$41` contains the desired track number.
+
+So we first of all check if the header sector (in `A`) matches the desired sector.
+If it doesn’t, we’ll start the whole read sector routine again and look for
+another address header.
+
+```
+Cs9A: C5 3D         CMP $3D
+Cs9C: D0 BE         BNE $Cs5C
+```
+
+But if we have the right sector, we next need to check we have the right track
+by loading in the header track we got (in `$40`). If we don’t, we start over
+looking for another address header.
+
+```
+Cs9E: A5 40         LDA $40
+CsA0: C5 41         CMP $41
+CsA2: D0 B8         BNE $Cs5C
+```
+
+After a successful `CMP`, the carry bit will be set and so `BCS` is a branch
+always, in this case back to `$Cs5D`. And because the carry bit is set, this
+will look next for the data header.
+
+```
+CsA4: B0 B7         BCS $Cs5D
+```
+
+Note that the volume, checksum, and the epilogue of the address header are all
+ignored.
+
+## Reading Sector Data
+
 TO BE CONTINUED
