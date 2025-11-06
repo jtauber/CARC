@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-11-06T04:41:58.121515-05:00</updated>
+  <updated>2025-11-06T05:11:10.752234-05:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,6 +11,45 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
+    <title type="html">Applesoft BASIC Files in the Apple II Disk Corpus</title>
+    <link href="https://jtauber.github.io/CARC/2025/11/06/applesoft-basic-files-in-the-apple-ii-disk-corpus/" rel="alternate" type="text/html" title="Applesoft BASIC Files in the Apple II Disk Corpus"/>
+    <published>2025-11-06</published>
+    <updated>2025-11-06T05:11:10.752234-05:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/11/06/applesoft-basic-files-in-the-apple-ii-disk-corpus/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/11/06/applesoft-basic-files-in-the-apple-ii-disk-corpus/">&lt;p&gt;Of the &lt;strong&gt;6,998&lt;/strong&gt; “normal” disks in the Apple II Disk Corpus, &lt;strong&gt;5,870&lt;/strong&gt; of them
+contain at least one Applesoft BASIC file. As mentioned in a previous post, this
+amounts to 35,117 Applesoft BASIC files in this subcorpus.&lt;/p&gt;
+&lt;p&gt;Over time we will study these files in detail but, for now, here are the most
+common file names for Applesoft BASIC files:&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HELLO&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;4,185&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MENU&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;686&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(6 x &lt;code&gt;$08&lt;/code&gt;)                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;165&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;STARTUP&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;96&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;START&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;88&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;CREDITS&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;72&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;INTRO&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;71&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;70&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PRINTER SUPPORT&lt;/code&gt;               &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;70&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;COMMON.LIB&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;68&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(empty)                                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;67&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HELLO2&lt;/code&gt;                        &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;64&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;DEMO&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;63&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(7 x &lt;code&gt;$08&lt;/code&gt;)                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;55&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;LOGO&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;52&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;INSTRUCTIONS&lt;/code&gt;                  &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;50&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HI&lt;/code&gt;                            &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;50&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;COPYA&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;49&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MAIN PGM&lt;/code&gt;                      &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;49&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;END&lt;/code&gt;                           &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;47&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">Of the &lt;strong&gt;6,998&lt;/strong&gt; “normal” disks in the Apple II Disk Corpus, &lt;strong&gt;5,870&lt;/strong&gt; of them
+contain at least one Applesoft BASIC file. As mentioned in a previous post, this
+amounts to 35,117 Applesoft BASIC files in this subcorpus.</summary>
+  </entry><entry>
     <title type="html">How the CATALOG Differs if a 4am Crack or Not</title>
     <link href="https://jtauber.github.io/CARC/2025/11/06/how-the-catalog-differs-if-a-4am-crack-or-not/" rel="alternate" type="text/html" title="How the CATALOG Differs if a 4am Crack or Not"/>
     <published>2025-11-06</published>
