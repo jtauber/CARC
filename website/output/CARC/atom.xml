@@ -2,7 +2,7 @@
   <generator uri="https://github.com/jtauber/ryland">Ryland</generator>
   <link href="https://jtauber.github.io/CARC/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://jtauber.github.io/CARC/" rel="alternate" type="text/html"/>
-  <updated>2025-10-20T22:39:22.918055-04:00</updated>
+  <updated>2025-11-06T04:41:58.121515-05:00</updated>
   <id>https://jtauber.github.io/CARC/atom.xml</id>
   <title type="html">CARC</title>
   
@@ -11,10 +11,80 @@
   <author>
     <name>James Tauber</name>
   </author><entry>
-    <title type="html">What is in the CATALOG of each disk</title>
-    <link href="https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/" rel="alternate" type="text/html" title="What is in the CATALOG of each disk"/>
+    <title type="html">How the CATALOG Differs if a 4am Crack or Not</title>
+    <link href="https://jtauber.github.io/CARC/2025/11/06/how-the-catalog-differs-if-a-4am-crack-or-not/" rel="alternate" type="text/html" title="How the CATALOG Differs if a 4am Crack or Not"/>
+    <published>2025-11-06</published>
+    <updated>2025-11-06T04:41:58.121515-05:00</updated>
+    <id>https://jtauber.github.io/CARC/2025/11/06/how-the-catalog-differs-if-a-4am-crack-or-not/</id>
+    <content type="html" xml:base="https://jtauber.github.io/CARC/2025/11/06/how-the-catalog-differs-if-a-4am-crack-or-not/">&lt;p&gt;In the previous post I speculated that the counts of file names in the corpus
+might be skewed due to the number of disks cracked by 4am. In this post I
+separate them out.&lt;/p&gt;
+&lt;p&gt;As in the previous post, I&#39;m just dealing with the &lt;strong&gt;6,998&lt;/strong&gt; disks meeting
+certain tests of a “normal” DOS 3.3 VTOC and CATALOG. Of those disks, &lt;strong&gt;1,278&lt;/strong&gt;
+have the string &lt;code&gt;(4am crack)&lt;/code&gt; in their disk name.&lt;/p&gt;
+&lt;p&gt;The most common file names in the &lt;code&gt;(4am crack)&lt;/code&gt; disk CATALOGs are:&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HELLO&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;1,025&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT0&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;556&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;AUTOTRACE&lt;/code&gt;                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;470&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT1&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;468&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;RWTS&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;459&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;ADVANCED DEMUFFIN 1.5&lt;/code&gt;         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;439&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;ADVANCED DEMUFFIN 1.5 DOCS&lt;/code&gt;    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;439&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PDP&lt;/code&gt;                           &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;399&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;SUPER DEMUFFIN&lt;/code&gt;                &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;397&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PDP.README&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;275&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;PDP DOCS&lt;/code&gt;                      &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;122&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MENU&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;110&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;A 4AM CRACK (README)&lt;/code&gt;          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;105&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;TRACE2&lt;/code&gt;                        &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;94&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;TRACE&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;89&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;AUTOTRACE0&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;85&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;AUTOTRACE1&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;85&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;ADVANCED DEMUFFIN 1.1&lt;/code&gt;         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;85&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;IOB&lt;/code&gt;                           &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;66&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;CREDITS&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;53&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;However, the most common file names in the non-&lt;code&gt;(4am crack)&lt;/code&gt; disk CATALOGs are:&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;HELLO&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;3,389&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MENU&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;675&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;(7 x &lt;code&gt;$08&lt;/code&gt;)                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;609&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;(empty)                              &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;525&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;LOGO&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;354&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;APPLESOFT&lt;/code&gt;                     &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;237&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;(6 x &lt;code&gt;$08&lt;/code&gt;)               &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;231&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;INTBASIC&lt;/code&gt;                      &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;191&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;TITLE&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;191&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;CHAIN&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;179&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;RUNTIME&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;134&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;START&lt;/code&gt;                         &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;127&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;MECC$$DISK&lt;/code&gt;                    &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;123&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;STARTUP&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;121&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;A&lt;/code&gt;                             &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;116&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;CAT&lt;/code&gt;                           &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;111&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;BOOT&lt;/code&gt;                          &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;107&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;FPBASIC&lt;/code&gt;                       &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;100&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;C&lt;/code&gt;                             &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;92&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;code&gt;H&lt;/code&gt;                             &lt;/td&gt;&lt;td style=&#34;text-align: right;&#34;&gt;92&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Which seems to confirm all the files like &lt;code&gt;BOOT0&lt;/code&gt;, &lt;code&gt;AUTOTRACE&lt;/code&gt;, &lt;code&gt;BOOT1&lt;/code&gt;, &lt;code&gt;RWTS&lt;/code&gt;, &lt;code&gt;ADVANCED DEMUFFIN 1.5&lt;/code&gt;,
+&lt;code&gt;ADVANCED DEMUFFIN 1.5 DOCS&lt;/code&gt;, &lt;code&gt;PDP&lt;/code&gt;, &lt;code&gt;SUPER DEMUFFIN&lt;/code&gt;, &lt;code&gt;PDP.README&lt;/code&gt;, &lt;code&gt;PDP DOCS&lt;/code&gt;, &lt;code&gt;A 4AM CRACK (README)&lt;/code&gt;,
+&lt;code&gt;TRACE2&lt;/code&gt;, &lt;code&gt;TRACE&lt;/code&gt;, &lt;code&gt;AUTOTRACE0&lt;/code&gt;, &lt;code&gt;AUTOTRACE1&lt;/code&gt;, &lt;code&gt;ADVANCED DEMUFFIN 1.1&lt;/code&gt;, and possibly &lt;code&gt;IOB&lt;/code&gt; and &lt;code&gt;CREDITS&lt;/code&gt;
+are just artifacts of the cracking process.&lt;/p&gt;</content>
+    <author>
+      <name>James Tauber</name>
+    </author>
+    <summary type="html">In the previous post I speculated that the counts of file names in the corpus
+might be skewed due to the number of disks cracked by 4am. In this post I
+separate them out.</summary>
+  </entry><entry>
+    <title type="html">What is in the CATALOG of Each Disk</title>
+    <link href="https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/" rel="alternate" type="text/html" title="What is in the CATALOG of Each Disk"/>
     <published>2025-10-20</published>
-    <updated>2025-10-20T22:39:22.918055-04:00</updated>
+    <updated>2025-11-06T04:24:43.775065-05:00</updated>
     <id>https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/</id>
     <content type="html" xml:base="https://jtauber.github.io/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/">&lt;p&gt;I decided to extract the file metadata from disks with a standard layout.&lt;/p&gt;
 &lt;p&gt;As mentioned in an earlier post: of the &lt;strong&gt;12,450&lt;/strong&gt; disks in the initial Apple II Disk Corpus,

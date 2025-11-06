@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How the CATALOG Differs if a 4am Crack or Not | CARC</title>
+    
+  <meta name="description" content="In the previous post I speculated that the counts of file names in the corpus might be skewed due to the number of disks cracked by 4am. In this post I separ...">
+
+    <link rel="stylesheet" href="/CARC/style.css?1c9f7987accc6b28287cb484a4912c8c">
+    <link rel="alternate" type="application/atom+xml" href="https://jtauber.github.io/CARC/atom.xml">
+  </head>
+  <body class="post">
+    <aside>
+      <hgroup>
+  <h1><a href="/CARC/">CARC</a></h1>
+  <div class="site-description"><b>C</b>orpus <b>A</b>nalysis of <b>R</b>etro <b>C</b>ode</div>
+</hgroup>
+
+<nav>
+  <a target="_blank" href="https://github.com/jtauber/CARC">GitHub Repo</a>
+
+</nav>
+
+<p>
+  While there has been digital humanities work on old code, I’m not aware of
+  any straight up application of corpus linguistic approaches to its study.
+</p>
+
+<p>
+  The idea for this project came about when I read a discussion of whether
+  <code>LDA</code> was the most common 6502 instruction and it occurred to me that this,
+  along with a lot of subtleties that come with it, is a very “corpus linguistics” question to
+  ask.
+</p>
+
+<p>
+  The acronym is a Tolkien reference, “Carc” being a legendary raven from the
+  past in <cite>The Hobbit</cite>.
+</p>
+
+<p class="feed">
+  <a href="/CARC/atom.xml">
+    <svg class="svg-icon">
+      <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+        11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+        13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+        16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+      />
+    </svg>
+    Atom Feed
+  </a>
+</p>
+    </aside>
+    <main>
+      
+  <article class="post">
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/">What is in the CATALOG of Each Disk</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+
+    <h1>How the CATALOG Differs if a 4am Crack or Not</h1>
+    <div class="post-metadata">
+  <span class="post-date">November 6, 2025</span>
+  
+    <span class="post-author">by James Tauber</span>
+  
+</div>
+
+    <div class="post-content">
+      <p>In the previous post I speculated that the counts of file names in the corpus
+might be skewed due to the number of disks cracked by 4am. In this post I
+separate them out.</p>
+<p>As in the previous post, I'm just dealing with the <strong>6,998</strong> disks meeting
+certain tests of a “normal” DOS 3.3 VTOC and CATALOG. Of those disks, <strong>1,278</strong>
+have the string <code>(4am crack)</code> in their disk name.</p>
+<p>The most common file names in the <code>(4am crack)</code> disk CATALOGs are:</p>
+<table class="table">
+  <tr><td><code>HELLO</code>                         </td><td style="text-align: right;">1,025</td></tr>
+  <tr><td><code>BOOT0</code>                         </td><td style="text-align: right;">556</td></tr>
+  <tr><td><code>AUTOTRACE</code>                     </td><td style="text-align: right;">470</td></tr>
+  <tr><td><code>BOOT1</code>                         </td><td style="text-align: right;">468</td></tr>
+  <tr><td><code>RWTS</code>                          </td><td style="text-align: right;">459</td></tr>
+  <tr><td><code>ADVANCED DEMUFFIN 1.5</code>         </td><td style="text-align: right;">439</td></tr>
+  <tr><td><code>ADVANCED DEMUFFIN 1.5 DOCS</code>    </td><td style="text-align: right;">439</td></tr>
+  <tr><td><code>PDP</code>                           </td><td style="text-align: right;">399</td></tr>
+  <tr><td><code>SUPER DEMUFFIN</code>                </td><td style="text-align: right;">397</td></tr>
+  <tr><td><code>PDP.README</code>                    </td><td style="text-align: right;">275</td></tr>
+  <tr><td><code>PDP DOCS</code>                      </td><td style="text-align: right;">122</td></tr>
+  <tr><td><code>MENU</code>                          </td><td style="text-align: right;">110</td></tr>
+  <tr><td><code>A 4AM CRACK (README)</code>          </td><td style="text-align: right;">105</td></tr>
+  <tr><td><code>TRACE2</code>                        </td><td style="text-align: right;">94</td></tr>
+  <tr><td><code>TRACE</code>                         </td><td style="text-align: right;">89</td></tr>
+  <tr><td><code>AUTOTRACE0</code>                    </td><td style="text-align: right;">85</td></tr>
+  <tr><td><code>AUTOTRACE1</code>                    </td><td style="text-align: right;">85</td></tr>
+  <tr><td><code>ADVANCED DEMUFFIN 1.1</code>         </td><td style="text-align: right;">85</td></tr>
+  <tr><td><code>IOB</code>                           </td><td style="text-align: right;">66</td></tr>
+  <tr><td><code>CREDITS</code>                       </td><td style="text-align: right;">53</td></tr>
+</table>
+
+<p>However, the most common file names in the non-<code>(4am crack)</code> disk CATALOGs are:</p>
+<table class="table">
+  <tr><td><code>HELLO</code>                         </td><td style="text-align: right;">3,389</td></tr>
+  <tr><td><code>MENU</code>                          </td><td style="text-align: right;">675</td></tr>
+  <tr><td>(7 x <code>$08</code>)                     </td><td style="text-align: right;">609</td></tr>
+  <tr><td><code>(empty)                              </td><td style="text-align: right;">525</td></tr>
+  <tr><td><code>LOGO</code>                          </td><td style="text-align: right;">354</td></tr>
+  <tr><td><code>APPLESOFT</code>                     </td><td style="text-align: right;">237</td></tr>
+  <tr><td><code>(6 x <code>$08</code>)               </td><td style="text-align: right;">231</td></tr>
+  <tr><td><code>INTBASIC</code>                      </td><td style="text-align: right;">191</td></tr>
+  <tr><td><code>TITLE</code>                         </td><td style="text-align: right;">191</td></tr>
+  <tr><td><code>CHAIN</code>                         </td><td style="text-align: right;">179</td></tr>
+  <tr><td><code>RUNTIME</code>                       </td><td style="text-align: right;">134</td></tr>
+  <tr><td><code>START</code>                         </td><td style="text-align: right;">127</td></tr>
+  <tr><td><code>MECC$$DISK</code>                    </td><td style="text-align: right;">123</td></tr>
+  <tr><td><code>STARTUP</code>                       </td><td style="text-align: right;">121</td></tr>
+  <tr><td><code>A</code>                             </td><td style="text-align: right;">116</td></tr>
+  <tr><td><code>CAT</code>                           </td><td style="text-align: right;">111</td></tr>
+  <tr><td><code>BOOT</code>                          </td><td style="text-align: right;">107</td></tr>
+  <tr><td><code>FPBASIC</code>                       </td><td style="text-align: right;">100</td></tr>
+  <tr><td><code>C</code>                             </td><td style="text-align: right;">92</td></tr>
+  <tr><td><code>H</code>                             </td><td style="text-align: right;">92</td></tr>
+</table>
+
+<p>Which seems to confirm all the files like <code>BOOT0</code>, <code>AUTOTRACE</code>, <code>BOOT1</code>, <code>RWTS</code>, <code>ADVANCED DEMUFFIN 1.5</code>,
+<code>ADVANCED DEMUFFIN 1.5 DOCS</code>, <code>PDP</code>, <code>SUPER DEMUFFIN</code>, <code>PDP.README</code>, <code>PDP DOCS</code>, <code>A 4AM CRACK (README)</code>,
+<code>TRACE2</code>, <code>TRACE</code>, <code>AUTOTRACE0</code>, <code>AUTOTRACE1</code>, <code>ADVANCED DEMUFFIN 1.1</code>, and possibly <code>IOB</code> and <code>CREDITS</code>
+are just artifacts of the cracking process.</p>
+    </div>
+
+    
+
+    <div class="pagination">
+  <div class="next">
+  
+    <span>←</span>
+    <a href="/CARC/2025/10/20/what-is-in-the-catalog-of-each-disk/">What is in the CATALOG of Each Disk</a>
+  
+  </div>
+  <div class="prev">
+  
+  </div>
+</div>
+  </article>
+
+    </main>
+  </body>
+</html>

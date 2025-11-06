@@ -1,5 +1,5 @@
 ---
-title: What is in the CATALOG of each disk
+title: What is in the CATALOG of Each Disk
 author: James Tauber
 date: 2025-10-20
 ---
